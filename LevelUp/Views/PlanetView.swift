@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlanetView: View {
     var planet: Planet
+    @State private var isTaped: Bool = false
     var body: some View {
         ZStack {
 //---------------BACKGROUND--------------------------
@@ -47,15 +48,22 @@ struct PlanetView: View {
             }
       
         
-//------------------PLANET + BUTTONS--------------------
+//------------------PLANET ------------------------------
                     Image(planet.planetImg)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
+                        .frame(height: 400)
+                        .aspectRatio(contentMode: .fit)
+                        .rotationEffect(isTaped ? .degrees(360) : .degrees(0))
+                        .animation(.linear(duration: 30).repeatForever())
            
             
             
            
                         
+        }
+        .onAppear {
+            isTaped = true
         }
         
     }
@@ -63,6 +71,14 @@ struct PlanetView: View {
 
 struct PlanetView_Previews: PreviewProvider {
     static var previews: some View {
-        PlanetView(planet: PLANET1)
+        Group {
+            PlanetView(planet: PLANET1)
+            PlanetView(planet: PLANET2)
+            PlanetView(planet: PLANET3)
+            PlanetView(planet: PLANET4)
+            PlanetView(planet: PLANET5)
+        }
+        
+        
     }
 }
