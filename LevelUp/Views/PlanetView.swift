@@ -20,10 +20,29 @@ struct PlanetView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 50)
+                        .padding()
+                    Spacer()
+                    Image("alien2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 50)
+                        .padding()
+                        .offset(x: -60, y: 120)
                 }
                 Spacer()
                 HStack {
-                    
+                    Image("alien3")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 50)
+                        .padding()
+                        .offset(x: 50, y: -50)
+                    Spacer()
+                    Image("alien4")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 50)
+                        .padding()
                 }
             }
       
