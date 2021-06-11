@@ -14,36 +14,28 @@ struct PlanetView: View {
 //---------------BACKGROUND--------------------------
             Color("bleuNuit")
                 .edgesIgnoringSafeArea(.all)
-            
+            VStack {
+                HStack {
+                    Image("alien1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 50)
+                }
+                Spacer()
+                HStack {
+                    
+                }
+            }
       
         
 //------------------PLANET + BUTTONS--------------------
                     Image(planet.planetImg)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-            Button(action: {
-                //action
-            }, label: {
-                Image("building1")
-                    .resizable().aspectRatio(contentMode: .fit)
-                    .frame(height: 50)
-                    .rotationEffect(.degrees(17))
-                    .position(x: 240, y: 210)
-                   
-              
-            })
+           
             
-            Button(action: {
-                //action
-            }, label: {
-                Image("building2")
-                    .resizable().aspectRatio(contentMode: .fit)
-                    .frame(height: 50)
-                    .rotationEffect(.degrees(-135))
-                    .position(x: 80, y: 460)
-                    
-              
-            })
+            
+           
                         
         }
         
