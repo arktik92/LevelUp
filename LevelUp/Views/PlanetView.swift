@@ -49,13 +49,7 @@ struct PlanetView: View {
       
         
 //------------------PLANET ------------------------------
-                    Image(planet.planetImg)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 400)
-                        .aspectRatio(contentMode: .fit)
-                        .rotationEffect(isTaped ? .degrees(360) : .degrees(0))
-                        .animation(.linear(duration: 30).repeatForever())
+            PlanetFormatted(planet: planet, isTaped: $isTaped)
            
             
             
@@ -80,5 +74,20 @@ struct PlanetView_Previews: PreviewProvider {
         }
         
         
+    }
+}
+
+struct PlanetFormatted: View {
+    var planet: Planet
+    @Binding var isTaped: Bool
+    
+    var body: some View {
+        Image(planet.planetImg)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(height: 400)
+            .aspectRatio(contentMode: .fit)
+            .rotationEffect(isTaped ? .degrees(360) : .degrees(0))
+            .animation(.linear(duration: 30).repeatForever(autoreverses: false))
     }
 }
