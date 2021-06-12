@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    var planet: Planet
     var body: some View {
-        Text("Hello World")
-            .padding()
-            .font(Font.custom("SFUIDisplay-Thin",size: 33))
+        PlanetView(planet: planet)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(planet: PLANET8)
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct LevelUpApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(planet: PLANET2)
         }
     }
 }

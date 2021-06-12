@@ -9,10 +9,10 @@ import SwiftUI
 
 struct PlanetView: View {
     var planet: Planet
-    @State private var isTaped: Bool = false
+    @State private var rotationState: Double = 0
     var body: some View {
         ZStack {
-//---------------BACKGROUND--------------------------
+            //---------------BACKGROUND--------------------------
             Color("bleuNuit")
                 .edgesIgnoringSafeArea(.all)
             VStack {
@@ -22,6 +22,8 @@ struct PlanetView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 50)
                         .padding()
+                        
+                        
                     Spacer()
                     Image("alien2")
                         .resizable()
@@ -46,20 +48,17 @@ struct PlanetView: View {
                         .padding()
                 }
             }
-      
-        
-//------------------PLANET ------------------------------
-            PlanetFormatted(planet: planet, isTaped: $isTaped)
-           
             
             
-           
-                        
+            //------------------PLANET ------------------------------
+            PlanetFormatted(planet: planet, rotationState: $rotationState)
+            
+            
+            
+            
+            
+            
         }
-        .onAppear {
-            isTaped = true
-        }
-        
     }
 }
 
@@ -79,7 +78,7 @@ struct PlanetView_Previews: PreviewProvider {
 
 struct PlanetFormatted: View {
     var planet: Planet
-    @Binding var isTaped: Bool
+    @Binding var rotationState: Double
     
     var body: some View {
         Image(planet.planetImg)
@@ -87,7 +86,18 @@ struct PlanetFormatted: View {
             .aspectRatio(contentMode: .fit)
             .frame(height: 400)
             .aspectRatio(contentMode: .fit)
-            .rotationEffect(isTaped ? .degrees(360) : .degrees(0))
-            .animation(.linear(duration: 30).repeatForever(autoreverses: false))
+            .rotationEffect(Angle(degrees: self.rotationState))
+            .gesture(RotationGesture()
+                        .onChanged { value in
+                            self.rotationState = value.degrees
+                        }
+            )
+            .overlay(
+                Image("astro1")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 50)
+                    .offset(y: -125)
+            )
     }
 }
