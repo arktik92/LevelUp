@@ -12,7 +12,7 @@ struct ContentView: View {
     var player: Player
     
     var body: some View {
-        PlanetView(planet: planet, player: PLAYER1)
+        ConnectionView()
     }
 }
 

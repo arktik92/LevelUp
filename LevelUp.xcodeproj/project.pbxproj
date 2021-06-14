@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70D096E0267776DE0069B4B5 /* connectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D096DF267776DE0069B4B5 /* connectionView.swift */; };
 		70FBB4DE267351CD00EBF9F3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBB4DD267351CD00EBF9F3 /* Data.swift */; };
 		D39EAD3C267250BF00DC0806 /* LevelUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EAD3B267250BF00DC0806 /* LevelUpApp.swift */; };
 		D39EAD3E267250BF00DC0806 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EAD3D267250BF00DC0806 /* ContentView.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70D096DF267776DE0069B4B5 /* connectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = connectionView.swift; sourceTree = "<group>"; };
 		70FBB4DD267351CD00EBF9F3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		D39EAD38267250BF00DC0806 /* LevelUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LevelUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39EAD3B267250BF00DC0806 /* LevelUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelUpApp.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				D39EAD69267348D000DC0806 /* Onboarding.swift */,
 				D39EAD6B267348EF00DC0806 /* Universe.swift */,
 				D39EAD6D267348FF00DC0806 /* PlanetView.swift */,
+				70D096DF267776DE0069B4B5 /* connectionView.swift */,
 				D39EAD6F2673491D00DC0806 /* GameProfile.swift */,
 				D39EAD732673493F00DC0806 /* PlayersProfile.swift */,
 				D39EAD752673495800DC0806 /* ModalConversation.swift */,
@@ -246,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70D096E0267776DE0069B4B5 /* connectionView.swift in Sources */,
 				D39EAD532672513F00DC0806 /* Conversation.swift in Sources */,
 				D39EAD4D2672510C00DC0806 /* Planet.swift in Sources */,
 				D39EAD762673495800DC0806 /* ModalConversation.swift in Sources */,

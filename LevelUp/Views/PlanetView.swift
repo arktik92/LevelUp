@@ -17,6 +17,10 @@ struct PlanetView: View {
             //---------------BACKGROUND--------------------------
             Color("bleuNuit")
                 .edgesIgnoringSafeArea(.all)
+            Image("fondEtoile")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            
             
             pointEtoile(player: player)
             
@@ -28,8 +32,8 @@ struct PlanetView: View {
                         .frame(height: 50)
                         .offset(y: 50)
                         .padding()
-                        
-                        
+                    
+                    
                     Spacer()
                     Image("alien2")
                         .resizable()
@@ -59,19 +63,15 @@ struct PlanetView: View {
             //------------------PLANET ------------------------------
             PlanetFormatted(planet: planet, rotationState: $rotationState)
             
-            
-            
-            
-            
-            
         }
+        
     }
 }
 
 struct PlanetView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-         
+            
             
             PlanetView(planet: PLANET1, player: PLAYER1)
             PlanetView(planet: PLANET2, player: PLAYER1)
@@ -117,7 +117,7 @@ struct PlanetFormatted: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 50)
                         .offset(y: -125)
-            )
+                )
         }
     }
 }

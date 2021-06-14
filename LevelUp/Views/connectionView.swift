@@ -8,7 +8,7 @@
 import SwiftUI
 
 import GameKit
-struct MenuView: View {
+struct ConnectionView: View {
     let localPlayer = GKLocalPlayer.local
     func authenticateUser() {
         localPlayer.authenticateHandler = { vc, error in
@@ -22,7 +22,7 @@ struct MenuView: View {
     var body: some View {
         NavigationView {
             NavigationLink(destination: PlanetView(planet: PLANET1, player: PLAYER1)) {
-                Text("Play Game")
+                Text("LevelUp")
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -33,8 +33,8 @@ struct MenuView: View {
 }
 
 
-struct MenuView_Previews: PreviewProvider {
+struct ConnectionView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        ConnectionView()
     }
 }
