@@ -78,7 +78,7 @@ let PLAYERS = [PLAYER1, PLAYER2, PLAYER3, PLAYER4]
 
 
 // Les planètes ------------------------------------------------
-let PLANET1 = Planet(planetName: "Celinus", planetImg: "planerOr", planetDescription: "La science dans ton quotidien. Cette planète a une avance scientifique de plusieurs dizaines d'années comparée à la Terre. Son domaine est la Science", planetGames: MY_GAMES1)
+let PLANET1 = Planet(planetName: "Celinus", planetImg: "planetOrTwo", planetDescription: "La science dans ton quotidien. Cette planète a une avance scientifique de plusieurs dizaines d'années comparée à la Terre. Son domaine est la Science", planetGames: MY_GAMES1)
 let PLANET2 = Planet(planetName: "Xiduter", planetImg: "planeteTerre", planetDescription: "Une planète très similaire à la Terre. Son domaine est l'Histoire'", planetGames: MY_GAMES2)
 let PLANET3 = Planet(planetName: "Thenrao", planetImg: "planetVerte", planetDescription: "Une planète en menace d'extinction. Son domaine est la Philosophie", planetGames: MY_GAMES3)
 let PLANET4 = Planet(planetName: "xxxx", planetImg: "planetRouge", planetDescription: "La science dans ton quotidien. Cette planète a une avance scientifique de plusieurs dizaines d'années comparée à la Terre. Son domaine est la Science", planetGames: MY_GAMES1)

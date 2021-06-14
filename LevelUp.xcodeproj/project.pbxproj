@@ -131,9 +131,9 @@
 				70FBB4DD267351CD00EBF9F3 /* Data.swift */,
 				D39EAD4E2672511B00DC0806 /* Game.swift */,
 				D39EAD502672513000DC0806 /* Player.swift */,
-				D39EAD522672513F00DC0806 /* Conversation.swift */,
 				D39EAD542672514B00DC0806 /* Message.swift */,
 				D39EAD562672516C00DC0806 /* Type.swift */,
+				D39EAD522672513F00DC0806 /* Conversation.swift */,
 				D39EAD582672517D00DC0806 /* Achiev.swift */,
 			);
 			path = Models;

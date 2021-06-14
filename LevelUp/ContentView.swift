@@ -9,13 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var planet: Planet
+    var player: Player
+    
     var body: some View {
-        PlanetView(planet: planet)
+        PlanetView(planet: planet, player: PLAYER1)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(planet: PLANET8)
+        ContentView(planet: PLANET8, player: PLAYER1)
     }
 }

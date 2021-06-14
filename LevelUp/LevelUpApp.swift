@@ -11,7 +11,8 @@ import SwiftUI
 struct LevelUpApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(planet: PLANET2)
+            ContentView(planet: PLANET2, player: PLAYER1)
+                .preferredColorScheme(.light)
         }
     }
 }
