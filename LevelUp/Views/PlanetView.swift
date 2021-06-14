@@ -20,10 +20,7 @@ struct PlanetView: View {
             Image("fondEtoile")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            
-            
             pointEtoile(player: player)
-            
             VStack {
                 HStack {
                     Image("alien1")
@@ -32,8 +29,6 @@ struct PlanetView: View {
                         .frame(height: 50)
                         .offset(y: 50)
                         .padding()
-                    
-                    
                     Spacer()
                     Image("alien2")
                         .resizable()
@@ -58,21 +53,15 @@ struct PlanetView: View {
                         .padding()
                 }
             }
-            
-            
             //------------------PLANET ------------------------------
             PlanetFormatted(planet: planet, rotationState: $rotationState)
-            
         }
-        
     }
 }
 
 struct PlanetView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            
-            
             PlanetView(planet: PLANET1, player: PLAYER1)
             PlanetView(planet: PLANET2, player: PLAYER1)
             PlanetView(planet: PLANET3, player: PLAYER1)
@@ -80,19 +69,14 @@ struct PlanetView_Previews: PreviewProvider {
             PlanetView(planet: PLANET5, player: PLAYER1)
             PlanetView(planet: PLANET1, player: PLAYER1)
                 .previewDevice("iPad (8th generation)")
-            
         }
-        
-        
     }
 }
 
 struct PlanetFormatted: View {
     var planet: Planet
     @Binding var rotationState: Double
-    
     var body: some View {
-        
         ZStack {
             if planet.planetImg == "planetOrTwo" {
                 Image("planetOrThree")
@@ -121,10 +105,8 @@ struct PlanetFormatted: View {
         }
     }
 }
-
 struct pointEtoile: View {
     var player: Player
-    
     var body: some View {
         VStack {
             HStack (spacing: 0) {
