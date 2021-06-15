@@ -27,10 +27,13 @@ struct Connexion: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
-            VStack{
+            VStack {
+                Image("levelup")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
                 if showField == true {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 8)
                         TextField("Ton adresse e-mail", text: $username)
                             .keyboardType(.emailAddress)
                             .disableAutocorrection(true)
@@ -42,7 +45,7 @@ struct Connexion: View {
                     }.foregroundColor(.white)
                     .frame(height: 70, alignment: .center)
                     ZStack {
-                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                        RoundedRectangle(cornerRadius: 8)
                         SecureField("Ton mot de passe", text: $password)
                             .disableAutocorrection(true)
                             .foregroundColor(Color("bleuNuit"))
@@ -86,7 +89,8 @@ struct Connexion: View {
                     }
                     
                     
-                } else {
+              
+                    
                     
                 }
                 
@@ -139,7 +143,7 @@ struct Connexion: View {
                 })
                 
                 
-                
+                Spacer()
                 
                 
                 
@@ -147,7 +151,7 @@ struct Connexion: View {
                         .frame(width: 280, height: 45)
                         
                       
-                
+               Spacer()
                 
                 
                 
