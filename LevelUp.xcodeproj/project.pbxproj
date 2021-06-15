@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70D096E0267776DE0069B4B5 /* connectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D096DF267776DE0069B4B5 /* connectionView.swift */; };
+		3E540061DABE338528814660 /* Pods_LevelUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603EA66648B7207679E2D6D5 /* Pods_LevelUp.framework */; };
+		701081FA26791A1D00288D76 /* Connexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701081F926791A1D00288D76 /* Connexion.swift */; };
+		701081FC26791A6900288D76 /* ModalConnexionValid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701081FB26791A6900288D76 /* ModalConnexionValid.swift */; };
+		70108201267929D300288D76 /* connectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70108200267929D300288D76 /* connectionView.swift */; };
+		70108203267929FB00288D76 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70108202267929FB00288D76 /* GameKit.framework */; };
+		701082052679330C00288D76 /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701082042679330C00288D76 /* SignInWithAppleButton.swift */; };
+		706E0DD7267918E800923030 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 706E0DD6267918E800923030 /* GoogleService-Info.plist */; };
 		70FBB4DE267351CD00EBF9F3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBB4DD267351CD00EBF9F3 /* Data.swift */; };
 		D39EAD3C267250BF00DC0806 /* LevelUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EAD3B267250BF00DC0806 /* LevelUpApp.swift */; };
 		D39EAD3E267250BF00DC0806 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EAD3D267250BF00DC0806 /* ContentView.swift */; };
@@ -41,8 +47,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		70D096DF267776DE0069B4B5 /* connectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = connectionView.swift; sourceTree = "<group>"; };
+		2D6F36ADA20852F6D0FF1BD5 /* Pods-LevelUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelUp.release.xcconfig"; path = "Target Support Files/Pods-LevelUp/Pods-LevelUp.release.xcconfig"; sourceTree = "<group>"; };
+		603EA66648B7207679E2D6D5 /* Pods_LevelUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LevelUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		701081F926791A1D00288D76 /* Connexion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connexion.swift; sourceTree = "<group>"; };
+		701081FB26791A6900288D76 /* ModalConnexionValid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalConnexionValid.swift; sourceTree = "<group>"; };
+		701081FD26791B7000288D76 /* LevelUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LevelUp.entitlements; sourceTree = "<group>"; };
+		70108200267929D300288D76 /* connectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = connectionView.swift; path = "../../../../../Desktop/LevelUp2 copie/LevelUp/Views/connectionView.swift"; sourceTree = "<group>"; };
+		70108202267929FB00288D76 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		701082042679330C00288D76 /* SignInWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInWithAppleButton.swift; path = LevelUp/Views/SignInWithAppleButton.swift; sourceTree = SOURCE_ROOT; };
+		706E0DD6267918E800923030 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70FBB4DD267351CD00EBF9F3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		7C12331BD05D7CA314D5D51D /* Pods-LevelUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelUp.debug.xcconfig"; path = "Target Support Files/Pods-LevelUp/Pods-LevelUp.debug.xcconfig"; sourceTree = "<group>"; };
 		D39EAD38267250BF00DC0806 /* LevelUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LevelUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39EAD3B267250BF00DC0806 /* LevelUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelUpApp.swift; sourceTree = "<group>"; };
 		D39EAD3D267250BF00DC0806 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E540061DABE338528814660 /* Pods_LevelUp.framework in Frameworks */,
+				70108203267929FB00288D76 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +109,8 @@
 			children = (
 				D39EAD3A267250BF00DC0806 /* LevelUp */,
 				D39EAD39267250BF00DC0806 /* Products */,
+				D471BD17B10D243559B7A452 /* Pods */,
+				EC130DF746B38B9F8B68EA7B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +125,7 @@
 		D39EAD3A267250BF00DC0806 /* LevelUp */ = {
 			isa = PBXGroup;
 			children = (
+				701081FD26791B7000288D76 /* LevelUp.entitlements */,
 				D39EAD3B267250BF00DC0806 /* LevelUpApp.swift */,
 				D39EAD3D267250BF00DC0806 /* ContentView.swift */,
 				D39EAD5B26726A0700DC0806 /* Fonts */,
@@ -113,6 +133,7 @@
 				D39EAD4A267250D200DC0806 /* Models */,
 				D39EAD3F267250C300DC0806 /* Assets.xcassets */,
 				D39EAD44267250C300DC0806 /* Info.plist */,
+				706E0DD6267918E800923030 /* GoogleService-Info.plist */,
 				D39EAD41267250C300DC0806 /* Preview Content */,
 			);
 			path = LevelUp;
@@ -144,10 +165,12 @@
 		D39EAD4B267250DD00DC0806 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				701081F926791A1D00288D76 /* Connexion.swift */,
+				70108200267929D300288D76 /* connectionView.swift */,
+				701081FB26791A6900288D76 /* ModalConnexionValid.swift */,
 				D39EAD69267348D000DC0806 /* Onboarding.swift */,
 				D39EAD6B267348EF00DC0806 /* Universe.swift */,
 				D39EAD6D267348FF00DC0806 /* PlanetView.swift */,
-				70D096DF267776DE0069B4B5 /* connectionView.swift */,
 				D39EAD6F2673491D00DC0806 /* GameProfile.swift */,
 				D39EAD732673493F00DC0806 /* PlayersProfile.swift */,
 				D39EAD752673495800DC0806 /* ModalConversation.swift */,
@@ -157,6 +180,7 @@
 				D39EAD7D2673499200DC0806 /* Game3.swift */,
 				D39EAD7F267349B800DC0806 /* PopUpEndOfGame.swift */,
 				D39EAD81267349D000DC0806 /* LandingPlanet.swift */,
+				701082042679330C00288D76 /* SignInWithAppleButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +198,24 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		D471BD17B10D243559B7A452 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C12331BD05D7CA314D5D51D /* Pods-LevelUp.debug.xcconfig */,
+				2D6F36ADA20852F6D0FF1BD5 /* Pods-LevelUp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EC130DF746B38B9F8B68EA7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70108202267929FB00288D76 /* GameKit.framework */,
+				603EA66648B7207679E2D6D5 /* Pods_LevelUp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,9 +223,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D39EAD47267250C300DC0806 /* Build configuration list for PBXNativeTarget "LevelUp" */;
 			buildPhases = (
+				9A26C4E20CCD9CE2198727A4 /* [CP] Check Pods Manifest.lock */,
 				D39EAD34267250BF00DC0806 /* Sources */,
 				D39EAD35267250BF00DC0806 /* Frameworks */,
 				D39EAD36267250BF00DC0806 /* Resources */,
+				BA2830418F8FDBA7EE6EC8FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +277,7 @@
 			files = (
 				D39EAD6726726AFF00DC0806 /* SFUIDisplay-Thin.otf in Resources */,
 				D39EAD43267250C300DC0806 /* Preview Assets.xcassets in Resources */,
+				706E0DD7267918E800923030 /* GoogleService-Info.plist in Resources */,
 				D39EAD5D26726AAD00DC0806 /* Revalia-Regular.ttf in Resources */,
 				D39EAD40267250C300DC0806 /* Assets.xcassets in Resources */,
 				D39EAD5F26726AC700DC0806 /* SFUIDisplay-Black.otf in Resources */,
@@ -244,12 +289,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9A26C4E20CCD9CE2198727A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LevelUp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA2830418F8FDBA7EE6EC8FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LevelUp/Pods-LevelUp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LevelUp/Pods-LevelUp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LevelUp/Pods-LevelUp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D39EAD34267250BF00DC0806 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70D096E0267776DE0069B4B5 /* connectionView.swift in Sources */,
 				D39EAD532672513F00DC0806 /* Conversation.swift in Sources */,
 				D39EAD4D2672510C00DC0806 /* Planet.swift in Sources */,
 				D39EAD762673495800DC0806 /* ModalConversation.swift in Sources */,
@@ -258,6 +344,7 @@
 				D39EAD80267349B800DC0806 /* PopUpEndOfGame.swift in Sources */,
 				D39EAD3C267250BF00DC0806 /* LevelUpApp.swift in Sources */,
 				D39EAD6E267348FF00DC0806 /* PlanetView.swift in Sources */,
+				701082052679330C00288D76 /* SignInWithAppleButton.swift in Sources */,
 				D39EAD7A2673497B00DC0806 /* Game1.swift in Sources */,
 				70FBB4DE267351CD00EBF9F3 /* Data.swift in Sources */,
 				D39EAD512672513000DC0806 /* Player.swift in Sources */,
@@ -268,8 +355,11 @@
 				D39EAD572672516C00DC0806 /* Type.swift in Sources */,
 				D39EAD7C2673498500DC0806 /* Game2.swift in Sources */,
 				D39EAD82267349D000DC0806 /* LandingPlanet.swift in Sources */,
+				701081FA26791A1D00288D76 /* Connexion.swift in Sources */,
 				D39EAD782673496900DC0806 /* Tutorial.swift in Sources */,
+				70108201267929D300288D76 /* connectionView.swift in Sources */,
 				D39EAD7E2673499200DC0806 /* Game3.swift in Sources */,
+				701081FC26791A6900288D76 /* ModalConnexionValid.swift in Sources */,
 				D39EAD6C267348EF00DC0806 /* Universe.swift in Sources */,
 				D39EAD592672517D00DC0806 /* Achiev.swift in Sources */,
 			);
@@ -396,9 +486,11 @@
 		};
 		D39EAD48267250C300DC0806 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C12331BD05D7CA314D5D51D /* Pods-LevelUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LevelUp/LevelUp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LevelUp/Preview Content\"";
 				DEVELOPMENT_TEAM = CDT2LZXUGZ;
@@ -418,9 +510,11 @@
 		};
 		D39EAD49267250C300DC0806 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D6F36ADA20852F6D0FF1BD5 /* Pods-LevelUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LevelUp/LevelUp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LevelUp/Preview Content\"";
 				DEVELOPMENT_TEAM = CDT2LZXUGZ;

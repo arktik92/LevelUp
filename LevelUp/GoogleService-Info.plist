@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>908756639008-67kohi3hkus7fn0gdcqq0bvvd51uhsin.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.908756639008-67kohi3hkus7fn0gdcqq0bvvd51uhsin</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBr_0TrIS5SEc4iV9mNH-IBm75FXNWIP9M</string>
+	<key>GCM_SENDER_ID</key>
+	<string>908756639008</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.esteban.LevelUp</string>
+	<key>PROJECT_ID</key>
+	<string>levelupappextended</string>
+	<key>STORAGE_BUCKET</key>
+	<string>levelupappextended.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:908756639008:ios:ef3c89e06ba9bb1c898b45</string>
+</dict>
+</plist>
