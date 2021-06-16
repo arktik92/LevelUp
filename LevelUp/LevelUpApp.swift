@@ -16,18 +16,18 @@ struct LevelUpApp: App {
     var delegate
     var body: some Scene {
         WindowGroup {
-            ContentView(planet: PLANET2, player: PLAYER1)
+            ContentView()
                 .preferredColorScheme(.light)
         }
     }
 }
 class AppDelegate: NSObject, UIApplicationDelegate {
     var window: UIWindow?
-
-     func application(_ application: UIApplication,
-       didFinishLaunchingWithOptions launchOptions:
-        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       FirebaseApp.configure()
-       return true
-     }
+    
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions:
+                        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        return true
+    }
 }

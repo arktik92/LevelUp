@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    var planet: Planet
-    var player: Player
-    
+    @AppStorage("log_status") var log_Status = false
     var body: some View {
-        Connexion()
+        if log_Status {
+            Universe()
+        } else {
+            Connexion()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(planet: PLANET8, player: PLAYER1)
+        ContentView()
+            .previewDevice("iPad (8th generation)")
     }
 }

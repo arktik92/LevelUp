@@ -8,7 +8,7 @@
 import Foundation
 
 enum Type {
-   
+    
     case quizz, classement, reconnaissanceVisuelle
 }
 

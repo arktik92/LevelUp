@@ -10,7 +10,6 @@ import SwiftUI
 struct PlanetView: View {
     var planet: Planet
     var player: Player
-    
     @State private var rotationState: Double = 0
     var body: some View {
         ZStack {
@@ -58,7 +57,6 @@ struct PlanetView: View {
         }
     }
 }
-
 struct PlanetView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -72,7 +70,6 @@ struct PlanetView_Previews: PreviewProvider {
         }
     }
 }
-
 struct PlanetFormatted: View {
     var planet: Planet
     @Binding var rotationState: Double
@@ -117,7 +114,6 @@ struct pointEtoile: View {
                 Text("\(player.totalEtoile)")
                     .foregroundColor(.white)
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                
                 Spacer()
             }
             Spacer()
