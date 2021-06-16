@@ -12,7 +12,7 @@
 		701081FC26791A6900288D76 /* ModalConnexionValid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701081FB26791A6900288D76 /* ModalConnexionValid.swift */; };
 		70108201267929D300288D76 /* connectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70108200267929D300288D76 /* connectionView.swift */; };
 		70108203267929FB00288D76 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70108202267929FB00288D76 /* GameKit.framework */; };
-		701082052679330C00288D76 /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701082042679330C00288D76 /* SignInWithAppleButton.swift */; };
+		701603152679E7F900225CA0 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701603142679E7F900225CA0 /* LoginModel.swift */; };
 		706E0DD7267918E800923030 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 706E0DD6267918E800923030 /* GoogleService-Info.plist */; };
 		70FBB4DE267351CD00EBF9F3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBB4DD267351CD00EBF9F3 /* Data.swift */; };
 		D39EAD3C267250BF00DC0806 /* LevelUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EAD3B267250BF00DC0806 /* LevelUpApp.swift */; };
@@ -54,7 +54,7 @@
 		701081FD26791B7000288D76 /* LevelUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LevelUp.entitlements; sourceTree = "<group>"; };
 		70108200267929D300288D76 /* connectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = connectionView.swift; path = "../../../../../Desktop/LevelUp2 copie/LevelUp/Views/connectionView.swift"; sourceTree = "<group>"; };
 		70108202267929FB00288D76 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		701082042679330C00288D76 /* SignInWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInWithAppleButton.swift; path = LevelUp/Views/SignInWithAppleButton.swift; sourceTree = SOURCE_ROOT; };
+		701603142679E7F900225CA0 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		706E0DD6267918E800923030 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70FBB4DD267351CD00EBF9F3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		7C12331BD05D7CA314D5D51D /* Pods-LevelUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelUp.debug.xcconfig"; path = "Target Support Files/Pods-LevelUp/Pods-LevelUp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +158,7 @@
 				D39EAD562672516C00DC0806 /* Type.swift */,
 				D39EAD522672513F00DC0806 /* Conversation.swift */,
 				D39EAD582672517D00DC0806 /* Achiev.swift */,
+				701603142679E7F900225CA0 /* LoginModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,7 +181,6 @@
 				D39EAD7D2673499200DC0806 /* Game3.swift */,
 				D39EAD7F267349B800DC0806 /* PopUpEndOfGame.swift */,
 				D39EAD81267349D000DC0806 /* LandingPlanet.swift */,
-				701082042679330C00288D76 /* SignInWithAppleButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,7 +344,6 @@
 				D39EAD80267349B800DC0806 /* PopUpEndOfGame.swift in Sources */,
 				D39EAD3C267250BF00DC0806 /* LevelUpApp.swift in Sources */,
 				D39EAD6E267348FF00DC0806 /* PlanetView.swift in Sources */,
-				701082052679330C00288D76 /* SignInWithAppleButton.swift in Sources */,
 				D39EAD7A2673497B00DC0806 /* Game1.swift in Sources */,
 				70FBB4DE267351CD00EBF9F3 /* Data.swift in Sources */,
 				D39EAD512672513000DC0806 /* Player.swift in Sources */,
@@ -358,6 +357,7 @@
 				701081FA26791A1D00288D76 /* Connexion.swift in Sources */,
 				D39EAD782673496900DC0806 /* Tutorial.swift in Sources */,
 				70108201267929D300288D76 /* connectionView.swift in Sources */,
+				701603152679E7F900225CA0 /* LoginModel.swift in Sources */,
 				D39EAD7E2673499200DC0806 /* Game3.swift in Sources */,
 				701081FC26791A6900288D76 /* ModalConnexionValid.swift in Sources */,
 				D39EAD6C267348EF00DC0806 /* Universe.swift in Sources */,

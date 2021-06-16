@@ -7,11 +7,11 @@
 import Firebase
 import SwiftUI
 import AuthenticationServices
-
+import GameKit
 
 struct Connexion: View {
     
-    
+    @StateObject var loginData = LoginModel()
     @State private var username: String = ""
     @State private var password = ""
     @State private var showField : Bool = false
@@ -139,7 +139,7 @@ struct Connexion: View {
                         
                     }
                 }).fullScreenCover(isPresented: $isGamecenterTapped, content: {
-                    ModalConnexionValid()
+                    ConnectionView()
                 })
                 
                 
@@ -147,9 +147,30 @@ struct Connexion: View {
                 
                 
                 
-                SignInWithAppleButton()
-                        .frame(width: 280, height: 45)
-                        
+                
+                SignInWithAppleButton(.signIn) { request in
+                    
+                    loginData.nonce = randomNonceString()
+                    request.requestedScopes = [.email, .fullName]
+                    request.nonce = sha256(loginData.nonce)
+                    
+                } onCompletion: { result in
+                    
+                    switch result {
+                    case .success(let user):
+                        print("succes")
+                        guard let credential = user.credential as? ASAuthorizationAppleIDCredential else {
+                        print("error with firebase")
+                        return
+                        }
+                        loginData.authenticate(credential: credential)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                   
+                    }
+                }.signInWithAppleButtonStyle(.white)
+                .frame(height: 70, alignment: .center)
+                .clipShape(Capsule())
                       
                Spacer()
                 
