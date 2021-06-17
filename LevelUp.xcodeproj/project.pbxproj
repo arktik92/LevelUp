@@ -15,10 +15,8 @@
 		70160317267A1A9B00225CA0 /* SignInEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70160316267A1A9B00225CA0 /* SignInEmail.swift */; };
 		70160319267A1BBF00225CA0 /* SignInGC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70160318267A1BBF00225CA0 /* SignInGC.swift */; };
 		7016031B267A1C3800225CA0 /* SignInApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016031A267A1C3800225CA0 /* SignInApple.swift */; };
-		70160324267A455F00225CA0 /* connectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70160323267A455F00225CA0 /* connectionView.swift */; };
 		70487404267B4EDF00263425 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70487403267B4EDF00263425 /* ImagePicker.swift */; };
 		70487406267B4EFF00263425 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70487405267B4EFF00263425 /* PlaySound.swift */; };
-		70487408267B4F0D00263425 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70487407267B4F0D00263425 /* Data.swift */; };
 		7048740B267B4F8A00263425 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70487409267B4F8A00263425 /* QuizView.swift */; };
 		7048740C267B4F8A00263425 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048740A267B4F8A00263425 /* QuestionView.swift */; };
 		7048740E267B4F9100263425 /* BackgroundRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048740D267B4F9100263425 /* BackgroundRectangle.swift */; };
@@ -49,6 +47,8 @@
 		70487440267B51DE00263425 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048743F267B51DE00263425 /* Type.swift */; };
 		70487442267B51E300263425 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70487441267B51E300263425 /* Conversation.swift */; };
 		70487444267B51E600263425 /* Achiev.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70487443267B51E600263425 /* Achiev.swift */; };
+		70487446267B582300263425 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70487445267B582300263425 /* Data.swift */; };
+		70487448267B584C00263425 /* connectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70487447267B584C00263425 /* connectionView.swift */; };
 		706E0DD7267918E800923030 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 706E0DD6267918E800923030 /* GoogleService-Info.plist */; };
 		D39EAD3C267250BF00DC0806 /* LevelUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EAD3B267250BF00DC0806 /* LevelUpApp.swift */; };
 		D39EAD3E267250BF00DC0806 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EAD3D267250BF00DC0806 /* ContentView.swift */; };
@@ -74,10 +74,8 @@
 		70160316267A1A9B00225CA0 /* SignInEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmail.swift; sourceTree = "<group>"; };
 		70160318267A1BBF00225CA0 /* SignInGC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGC.swift; sourceTree = "<group>"; };
 		7016031A267A1C3800225CA0 /* SignInApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInApple.swift; sourceTree = "<group>"; };
-		70160323267A455F00225CA0 /* connectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = connectionView.swift; path = "../../../../../../Desktop/LevelUp2 copie/LevelUp/Views/connectionView.swift"; sourceTree = "<group>"; };
 		70487403267B4EDF00263425 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		70487405267B4EFF00263425 /* PlaySound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
-		70487407267B4F0D00263425 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data.swift; path = ../../../../../Desktop/LevelUpMerge/LevelUp/Models/Data.swift; sourceTree = "<group>"; };
 		70487409267B4F8A00263425 /* QuizView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		7048740A267B4F8A00263425 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		7048740D267B4F9100263425 /* BackgroundRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundRectangle.swift; sourceTree = "<group>"; };
@@ -108,6 +106,8 @@
 		7048743F267B51DE00263425 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		70487441267B51E300263425 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		70487443267B51E600263425 /* Achiev.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Achiev.swift; sourceTree = "<group>"; };
+		70487445267B582300263425 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		70487447267B584C00263425 /* connectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = connectionView.swift; sourceTree = "<group>"; };
 		706E0DD6267918E800923030 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C12331BD05D7CA314D5D51D /* Pods-LevelUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelUp.debug.xcconfig"; path = "Target Support Files/Pods-LevelUp/Pods-LevelUp.debug.xcconfig"; sourceTree = "<group>"; };
 		D39EAD38267250BF00DC0806 /* LevelUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LevelUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,10 +141,10 @@
 		7016031C267A44C700225CA0 /* ConnectionView */ = {
 			isa = PBXGroup;
 			children = (
+				70487447267B584C00263425 /* connectionView.swift */,
 				7016031A267A1C3800225CA0 /* SignInApple.swift */,
 				70160318267A1BBF00225CA0 /* SignInGC.swift */,
 				701081F926791A1D00288D76 /* Connexion.swift */,
-				70160323267A455F00225CA0 /* connectionView.swift */,
 				70160316267A1A9B00225CA0 /* SignInEmail.swift */,
 				701081FB26791A6900288D76 /* ModalConnexionValid.swift */,
 				D39EAD6D267348FF00DC0806 /* PlanetView.swift */,
@@ -228,7 +228,7 @@
 		D39EAD4A267250D200DC0806 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				70487407267B4F0D00263425 /* Data.swift */,
+				70487445267B582300263425 /* Data.swift */,
 				70487405267B4EFF00263425 /* PlaySound.swift */,
 				70487403267B4EDF00263425 /* ImagePicker.swift */,
 				70487439267B51D500263425 /* Game.swift */,
@@ -410,10 +410,12 @@
 				7048741C267B4FD400263425 /* LandingPlanet.swift in Sources */,
 				D39EAD4D2672510C00DC0806 /* Planet.swift in Sources */,
 				70487414267B4FB800263425 /* GameBackground.swift in Sources */,
+				70487446267B582300263425 /* Data.swift in Sources */,
 				70487440267B51DE00263425 /* Type.swift in Sources */,
 				D39EAD3E267250BF00DC0806 /* ContentView.swift in Sources */,
 				D39EAD3C267250BF00DC0806 /* LevelUpApp.swift in Sources */,
 				D39EAD6E267348FF00DC0806 /* PlanetView.swift in Sources */,
+				70487448267B584C00263425 /* connectionView.swift in Sources */,
 				7048740B267B4F8A00263425 /* QuizView.swift in Sources */,
 				70487432267B502F00263425 /* Game3.swift in Sources */,
 				70487406267B4EFF00263425 /* PlaySound.swift in Sources */,
@@ -426,7 +428,6 @@
 				70160317267A1A9B00225CA0 /* SignInEmail.swift in Sources */,
 				70487420267B4FE000263425 /* Onboarding.swift in Sources */,
 				7048741E267B4FDC00263425 /* GameProfile.swift in Sources */,
-				70160324267A455F00225CA0 /* connectionView.swift in Sources */,
 				7048742E267B502F00263425 /* Game1TabView.swift in Sources */,
 				70487431267B502F00263425 /* Game1WalkthroughView.swift in Sources */,
 				701081FA26791A1D00288D76 /* Connexion.swift in Sources */,
@@ -444,7 +445,6 @@
 				70487422267B4FED00263425 /* PlayersProfile.swift in Sources */,
 				70487418267B4FC400263425 /* Tutorial.swift in Sources */,
 				7048743E267B51DB00263425 /* Message.swift in Sources */,
-				70487408267B4F0D00263425 /* Data.swift in Sources */,
 				70487425267B500700263425 /* ModalConversation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

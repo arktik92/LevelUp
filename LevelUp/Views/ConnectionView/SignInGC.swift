@@ -36,7 +36,7 @@ struct SignInGameCenter: View {
                 }
             )
         }).fullScreenCover(isPresented: $isGameCenterTaped, content: {
-            ConnectionView(planet: MY_PLANETS, player: PLAYER1)
+            ConnectionView()
         })
     }
 }

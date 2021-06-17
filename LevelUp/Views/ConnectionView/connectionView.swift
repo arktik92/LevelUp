@@ -24,7 +24,7 @@ struct ConnectionView: View {
     var body: some View {
         NavigationView {
             NavigationLink(
-                "", destination: Universe(),
+                "", destination: Universe(myPlayer: PLAYER1, planetList: MY_PLANETS),
                 isActive: .constant(true)
             )
         }
