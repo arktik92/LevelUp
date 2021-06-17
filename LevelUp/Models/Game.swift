@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Game : Identifiable {
+struct Game : Identifiable, Equatable {
     
     var id = UUID()
     var gameName : String

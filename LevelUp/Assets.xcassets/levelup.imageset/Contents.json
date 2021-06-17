@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "levelup.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "levelup.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

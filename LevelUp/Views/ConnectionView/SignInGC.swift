@@ -14,26 +14,29 @@ struct SignInGameCenter: View {
         Button(action: {
             self.isGameCenterTaped.toggle()
         }, label: {
-            ZStack {
+            
                 Rectangle()
                     .foregroundColor(.white)
                     .clipShape(Capsule())
                     .frame(width: 300, height: 50, alignment: .center)
                     .padding()
+                    .overlay(
                 HStack {
+                    
                     Image("logogamecenter")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: 40, height: 40, alignment: .center)
+                        .padding()
                     Text("Connexion avec Game Center")
                         .fontWeight(.semibold)
                         .font(.custom("SFUIDisplay-Light", size: 18))
                         .foregroundColor(Color("bleuNuit"))
                         .padding(.horizontal, 30)
                 }
-            }
+            )
         }).fullScreenCover(isPresented: $isGameCenterTaped, content: {
-            ConnectionView()
+            ConnectionView(planet: MY_PLANETS, player: PLAYER1)
         })
     }
 }

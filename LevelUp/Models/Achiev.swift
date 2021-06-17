@@ -42,32 +42,59 @@ enum Achiev {
     }
     var imageName : String {
         switch self {
-        case.padawanAstro : return "VVVV"
-        case.jediAstro : return "VVVV"
-        case.masterAstro : return "VVVV"
-        case.superStar : return "VVVV"
-        case.megaStar : return "VVVV"
-        case.gigastar : return "VVVV"
-        case.propre1 : return "VVVV"  //10pts en Hygiène
-        case.propre2 : return "VVVV"  //20pts en Hygiène
-        case.propre3 : return "VVVV"  //30pts en Hygiène
-        case.survie1 : return "VVVV"  //10pts en Survie
-        case.survie2 : return "VVVV"  //20pts en Survie
-        case.survie3 : return "VVVV"  //30pts en Survie
-        case.quotidien1 : return "VVVV"  //10pts en Quotidien
-        case.quotidien2 : return "VVVV"  //20pts en Quotidien
-        case.quotidien3 : return "VVVV"  //30pts en Quotidien
-        case.professionnel1 : return "VVVV"  //10pts en Professionnel
-        case.professionnel2 : return "VVVV"  //20pts en Professionnel
-        case.professionnel3 : return "VVVV"  //30pts en Professionnel
-        case.devPerso1 : return "VVVV"  //10pts en DeveloppementPersonnel
-        case.devPerso2 : return "VVVV"  //20pts en DeveloppementPersonnel
-        case.devPerso3 : return "VVVV"  //30pts en DeveloppementPersonnel
-        case.pratique1 : return "VVVV"  //10pts en Pratique
-        case.pratique2 : return "VVVV"  //20pts en Pratique
-        case.pratique3 : return "VVVV"  //30pts en Pratique
+        case.padawanAstro : return "gem0"
+        case.jediAstro : return "gem1"
+        case.masterAstro : return "gem2"
+        case.superStar : return "gem3"
+        case.megaStar : return "gem4"
+        case.gigastar : return "gem5"
+        case.propre1 : return "gem6"  //10pts en Hygiène
+        case.propre2 : return "gem7"  //20pts en Hygiène
+        case.propre3 : return "gem8"  //30pts en Hygiène
+        case.survie1 : return "gem9"  //10pts en Survie
+        case.survie2 : return "gem10"  //20pts en Survie
+        case.survie3 : return "gem11"  //30pts en Survie
+        case.quotidien1 : return "gem12"  //10pts en Quotidien
+        case.quotidien2 : return "gem13"  //20pts en Quotidien
+        case.quotidien3 : return "gem14"  //30pts en Quotidien
+        case.professionnel1 : return "gem15"  //10pts en Professionnel
+        case.professionnel2 : return "gem16"  //20pts en Professionnel
+        case.professionnel3 : return "gem17"  //30pts en Professionnel
+        case.devPerso1 : return "gem19"  //10pts en DeveloppementPersonnel
+        case.devPerso2 : return "gem20"  //20pts en DeveloppementPersonnel
+        case.devPerso3 : return "gem21"  //30pts en DeveloppementPersonnel
+        case.pratique1 : return "gem22"  //10pts en Pratique
+        case.pratique2 : return "gem23"  //20pts en Pratique
+        case.pratique3 : return "gem24"  //30pts en Pratique
+        }
+    }
+    var shortDescription : String {
+        switch self {
+        case.padawanAstro : return "5 badges obtenus"
+        case.jediAstro : return "15 badges obtenus"
+        case.masterAstro : return "30 badges obtenus"
+        case.superStar : return "5 Serious Game finis"
+        case.megaStar : return "10 Serious Game finis"
+        case.gigastar : return "20 Serious Game finis"
+        case.propre1 : return "10pts en Hygiène"  //10pts en Hygiène
+        case.propre2 : return "20pts en Hygiène"  //20pts en Hygiène
+        case.propre3 : return "30pts en Hygiène"  //30pts en Hygiène
+        case.survie1 : return "10pts en Survie"  //10pts en Survie
+        case.survie2 : return "20pts en Survie"  //20pts en Survie
+        case.survie3 : return "30pts en Survie"  //30pts en Survie
+        case.quotidien1 : return "10pts en Quotidien"  //10pts en Quotidien
+        case.quotidien2 : return "20pts en Quotidien"  //20pts en Quotidien
+        case.quotidien3 : return "30pts en Quotidien"  //30pts en Quotidien
+        case.professionnel1 : return "10pts en Professionnel"  //10pts en Professionnel
+        case.professionnel2 : return "20pts en Professionnel"  //20pts en Professionnel
+        case.professionnel3 : return "30pts en Professionnel"  //30pts en Professionnel
+        case.devPerso1 : return "10pts en Dév. Personnel"  //10pts en DeveloppementPersonnel
+        case.devPerso2 : return "20pts en Dév. Personnel"  //20pts en DeveloppementPersonnel
+        case.devPerso3 : return "30pts en Dév. Personnel"  //30pts en DeveloppementPersonnel
+        case.pratique1 : return "10pts en Pratique"  //10pts en Pratique
+        case.pratique2 : return "20pts en Pratique"  //20pts en Pratique
+        case.pratique3 : return "30pts en Pratique"  //30pts en Pratique
         }
     }
     
 }
-

@@ -11,7 +11,7 @@ struct ContentView: View {
     @AppStorage("log_status") var log_Status = false
     var body: some View {
         if log_Status {
-            Universe()
+            Universe(myPlayer: PLAYER1, planetList: MY_PLANETS)
         } else {
             Connexion()
         }

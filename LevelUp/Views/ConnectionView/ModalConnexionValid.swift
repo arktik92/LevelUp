@@ -22,7 +22,7 @@ struct ModalConnexionValid: View {
                 Text("Clique sur suivant")
                     .foregroundColor(.white)
                 NavigationLink(
-                    destination: Universe(),
+                    destination: Universe(myPlayer: PLAYER1, planetList: MY_PLANETS),
                     label: {
                         RoundedRectangle(cornerRadius: 25)
                             .foregroundColor(.white)

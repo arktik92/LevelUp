@@ -19,13 +19,15 @@ struct SignInEmail: View {
             Button(action: {
                 self.showField.toggle()
             }, label: {
-                ZStack {
+                
                     Rectangle()
                         .foregroundColor(.white)
                         .clipShape(Capsule())
                         .frame(width: 300, height: 50, alignment: .center)
                         .padding()
+                        .overlay(
                     HStack {
+                        Spacer()
                         Image("arrobase")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -37,7 +39,8 @@ struct SignInEmail: View {
                             .foregroundColor(Color("bleuNuit"))
                             .padding(.horizontal, 30)
                     }
-                }
+                        )
+                
             })
             if showField == true {
                 ZStack{
@@ -87,7 +90,7 @@ struct SignInEmail: View {
                                 Text("Connexion")
                             )
                     }) .fullScreenCover(isPresented: $showMain, content: {
-                        Universe()
+                        Universe(myPlayer: PLAYER1, planetList: MY_PLANETS)
                     })
                 } else {
                     Rectangle()
