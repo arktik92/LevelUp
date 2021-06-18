@@ -10,6 +10,7 @@ import AuthenticationServices
 
 struct SignInGameCenter: View {
     @Binding var isGameCenterTaped: Bool
+    
     var body: some View {
         Button(action: {
             self.isGameCenterTaped.toggle()
@@ -36,7 +37,7 @@ struct SignInGameCenter: View {
                 }
             )
         }).fullScreenCover(isPresented: $isGameCenterTaped, content: {
-            ConnectionView()
+            Universe(myPlayer: PLAYER1, planetList: MY_PLANETS)
         })
     }
 }

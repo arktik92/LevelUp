@@ -13,7 +13,7 @@ struct Game1WalkthroughView: View {
     
     var body: some View {
         ZStack{
-            GameBackground()
+            GameBackground( gameTitle: "La science dans la survie")
             VStack{
                 Game1TabView(selection: $selection)
                     .padding(.top, 100)

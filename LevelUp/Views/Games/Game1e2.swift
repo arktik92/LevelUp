@@ -79,7 +79,7 @@ struct Game1e2: View {
 struct Game1e2_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            GameBackground()
+            GameBackground( gameTitle: "")
             Game1e2()
         }
         

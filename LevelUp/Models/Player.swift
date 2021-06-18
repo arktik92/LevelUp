@@ -7,20 +7,20 @@
 
 import Foundation
 
-struct Player : Identifiable {
+class Player : ObservableObject, Identifiable {
     var id = UUID()
-    var playerName : String
-    var playerImg : String
-    var totalEtoile : Int
-    var totalPtsPro : Double
-    var totalPtsHyg : Double
-    var totalPtsQuo : Double
-    var totalPtsSur : Double
-    var totalPtsDevPer : Double
-    var totalPtsPra : Double
-    var achievments : [Achiev]
-    var achievedGame:[Game]
-    var unlockedPlanet : [Planet]
+    var playerName : String = ""
+    var playerImg : String = ""
+   @Published var totalEtoile : Int = 0
+    var totalPtsPro : Double = 0.0
+    var totalPtsHyg : Double = 0.0
+    var totalPtsQuo : Double = 0.0
+    var totalPtsSur : Double = 0.0
+    var totalPtsDevPer : Double = 0.0
+    var totalPtsPra : Double = 0.0
+    var achievments : [Achiev] = []
+    var achievedGame:[Game] = []
+    var unlockedPlanet : [Planet] = []
 }
 
 extension Player {

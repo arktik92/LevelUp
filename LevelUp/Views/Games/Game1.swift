@@ -90,7 +90,7 @@ struct checkPLS: View {
 struct Game1_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            GameBackground()
+            GameBackground( gameTitle: "")
             Game1()
         }
         

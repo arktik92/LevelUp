@@ -12,10 +12,11 @@ struct PopUpEndOfGame: View {
     let game: Game
     var win: Bool
     @Binding var showGame: Bool
+    @EnvironmentObject var points : Player
     var body: some View {
         if win{
             ZStack{
-                BackgroundRectangle(color: "vert").opacity(0.7)
+                BackgroundRectangle(color: "vert")
                 VStack{
                     
                     Spacer()
@@ -47,7 +48,10 @@ struct PopUpEndOfGame: View {
                     Spacer()
                     
                     Button(){
+                        //Retour vers planète ou univers ??
                         showGame.toggle()
+                        points.totalEtoile += game.nbEtoile
+
                     }label:{
                         Text("Génial")
                             .font(Font.custom("Revalia", size: 22))
@@ -63,7 +67,7 @@ struct PopUpEndOfGame: View {
             }
         }else{
             ZStack{
-                BackgroundRectangle(color:"rouge").opacity(0.7)
+                BackgroundRectangle(color:"rouge")
                 VStack{
                     
                     Spacer()
@@ -80,7 +84,7 @@ struct PopUpEndOfGame: View {
                         .frame(maxWidth:.infinity)
                         .padding(.horizontal,50)
                         .rotationEffect(Angle(degrees: 200))
-                        
+                    
                     Spacer()
                     
                     HStack{
@@ -92,6 +96,7 @@ struct PopUpEndOfGame: View {
                     Spacer()
                     
                     Button(){
+                        //Retour vers planète ou univers ??
                         showGame.toggle()
                     }label:{
                         Text("C'est reparti !")
@@ -105,7 +110,7 @@ struct PopUpEndOfGame: View {
                     }.shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 8, x: 4, y: 4)
                     Spacer()
                 }.padding(15)
-                    
+                
             }
         }
     }
@@ -114,5 +119,6 @@ struct PopUpEndOfGame: View {
 struct PopUpEndOfGame_Previews: PreviewProvider {
     static var previews: some View {
         PopUpEndOfGame(player: PLAYER2, game: GAME1, win: true, showGame: .constant(true))
+            .environmentObject(Player())
     }
 }

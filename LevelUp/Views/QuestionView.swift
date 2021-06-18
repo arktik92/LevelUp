@@ -14,6 +14,7 @@ struct QuestionView: View {
     @Binding var juste : Double
     @State var completed : Bool = false
     let value = ["A","B","C","D","E","F"]
+    
     var body: some View {
         GeometryReader { geo in
                 VStack(alignment:.leading){
@@ -65,8 +66,12 @@ struct QuestionView: View {
 
 struct QuestionsView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(counter: .constant(0), question: Question(question: "Question 1", reponses: ["Réponse 1","Réponse 2","Réponse 3", "Réponse 4","Réponse 5"], reponse: 1,selectedInt : 0), quiz: QuizPotager,juste:.constant(0))
-            .previewLayout(.sizeThatFits)
+        ZStack {
+            GameBackground(gamePlanet: PLANET2, gameTitle: "test")
+            QuestionView(counter: .constant(0), question: Question(question: "Question 1", reponses: ["Réponse 1","Réponse 2","Réponse 3", "Réponse 4","Réponse 5"], reponse: 1,selectedInt : 0), quiz: QuizPotager,juste:.constant(0))
+                .previewLayout(.sizeThatFits)
+        }
+        
     }
 }
 struct PageSwipe: View {

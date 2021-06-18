@@ -13,9 +13,8 @@ struct BackgroundRectangle: View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
                 .foregroundColor(Color(color))
-                .opacity(0.7)
             RoundedRectangle(cornerRadius: 25)
-                .stroke(Color("orPopUp"),lineWidth: 12)
+                .stroke(Color(.yellow),lineWidth: 12)
         }
     }
 }

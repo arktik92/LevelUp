@@ -27,7 +27,7 @@ struct Game1TabView: View {
 struct Game1TabView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            GameBackground()
+            GameBackground( gameTitle: "")
             Game1TabView(selection: Binding.constant(0))
         }
     }

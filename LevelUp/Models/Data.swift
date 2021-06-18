@@ -73,10 +73,10 @@ let FRIEND_MESSAGE = [MESSAGE4, MESSAGE5, MESSAGE6]
 
 
 // Les joueurs ------------------------------------------------
-let PLAYER1 = Player(playerName: "FleurDesIles83", playerImg: "astroProfil", totalEtoile: 36, totalPtsPro: 28, totalPtsHyg: 7, totalPtsQuo: 18, totalPtsSur: 21, totalPtsDevPer: 10, totalPtsPra: 2, achievments: [.padawanAstro, .megaStar, .masterAstro, .jediAstro, .survie1, .survie2, .professionnel1 ], achievedGame: [GAME1, GAME2, GAME3, GAME4], unlockedPlanet: [PLANET1, PLANET2, PLANET3, PLANET4, PLANET5, PLANET6])
-let PLAYER2 = Player(playerName: "xXRockStarXx", playerImg: "astroProfil", totalEtoile: 15, totalPtsPro: 2, totalPtsHyg: 0, totalPtsQuo: 5, totalPtsSur: 0, totalPtsDevPer: 6, totalPtsPra: 10, achievments: [.pratique1], achievedGame: [GAME3], unlockedPlanet: [PLANET1])
-let PLAYER3 = Player(playerName: "unknown34218", playerImg: "astroProfil", totalEtoile: 22, totalPtsPro: 26, totalPtsHyg: 5, totalPtsQuo: 0, totalPtsSur: 6, totalPtsDevPer: 5, totalPtsPra: 14, achievments: [.superStar, .jediAstro, .pratique1], achievedGame: [GAME2, GAME3], unlockedPlanet: [PLANET1, PLANET2, PLANET3])
-let PLAYER4 = Player(playerName: "BernardB86", playerImg: "astroProfil", totalEtoile: 13, totalPtsPro: 0, totalPtsHyg: 1, totalPtsQuo: 2, totalPtsSur: 33, totalPtsDevPer: 5, totalPtsPra: 2, achievments: [.jediAstro, .masterAstro], achievedGame: [GAME3, GAME4], unlockedPlanet: [PLANET2, PLANET3])
+let PLAYER1 = Player()
+let PLAYER2 = Player()
+let PLAYER3 = Player()
+let PLAYER4 = Player()
 
 let PLAYERS = [PLAYER1, PLAYER2, PLAYER3, PLAYER4]
 
@@ -94,19 +94,23 @@ let PLANET6 = Planet(planetName: "xxxx", planetImg: "planetRandom", planetDescri
 let PLANET7 = Planet(planetName: "xxxx", planetImg: "planetBulle", planetDescription: "La science dans ton quotidien. Cette planète a une avance scientifique de plusieurs dizaines d'années comparée à la Terre. Son domaine est la Science", planetGames: MY_GAMES1)
 let PLANET8 = Planet(planetName: "xxxx", planetImg: "planetAnneau2", planetDescription: "Une planète très similaire à la Terre. Son domaine est l'Histoire'", planetGames: MY_GAMES2)
 let PLANET9 = Planet(planetName: "xxxx", planetImg: "planetAnneau", planetDescription: "Une planète en menace d'extinction. Son domaine est la Philosophie", planetGames: MY_GAMES3)
+let PLANET10 = Planet(planetName: "Celinus", planetImg: "planetOrTwo", planetDescription: "La science dans ton quotidien. Cette planète a une avance scientifique de plusieurs dizaines d'années comparée à la Terre. Son domaine est la Science", planetGames: MY_GAMES1)
 
 
 let MY_PLANETS = [PLANET1,PLANET2,PLANET3,PLANET4,PLANET5,PLANET6,PLANET7,PLANET8,PLANET9]
-
+let MY_PLANETS2 = [PLANET10,PLANET2,PLANET3,PLANET4,PLANET5,PLANET6,PLANET7,PLANET8,PLANET9]
 
 
 // Les tableaux de View par Game ------------------------------------------------
 
-let game1Views : [Any] = [Game1(), Game1e2()]
+// Les tableaux de View par Game ------------------------------------------------
 
+let game1Views : [Any] = [Game1(), Game1e2()]
+let game2Views : [Any] = [Game2(myGameDrag: GAME1)]
+let game3Views : [Any] = [Game3(player: PLAYER1, planetImg: ""), QuizView(planetImg: "", player: PLAYER1, showGame: .constant(true))]
 
 // Les données du quizz GAME3 ------------------------------------------------
 
 var QUESTIONTEST = Question(question: "Question 1", reponses: ["Réponse 1","Réponse 2","Réponse 3", "Réponse 4","Réponse 5"], reponse: 1,selectedInt : 0)
 
-var QuizPotager: [Question] = [Question(question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mauris leo, consequat vel egestas nec, convallis a neque.", reponses: ["Réponse 1","Réponse 2","Réponse 3"], reponse: 0,selectedInt : 0),Question(question: "Question 2", reponses: ["Réponse 1","Hello World","Hello World"], reponse: 0,selectedInt : 0),Question(question: "Question 3", reponses: ["Hello World","Hello World","Hello World"], reponse: 0,selectedInt : 0),Question(question: "Question 4", reponses: ["Hello World","Hello World","Hello World"], reponse: 0,selectedInt : 0)]
+var QuizPotager: [Question] = [Question(question: "Question 1: Quelle est la plante  que les moustiques n'aiment pas?", reponses: ["Réponse 1","Réponse 2","Réponse 3"], reponse: 0,selectedInt : 0),Question(question: "Question 2: Quelle est la meilleure solution pour éloigner les coccinelles de mon potager?", reponses: ["Réponse 1","Hello World","Hello World"], reponse: 0,selectedInt : 0),Question(question: "Question 3: Que faire si mon potager se faire envahir?", reponses: ["Hello World","Hello World","Hello World"], reponse: 0,selectedInt : 0),Question(question: "Question 4", reponses: ["Hello World","Hello World","Hello World"], reponse: 0,selectedInt : 0)]

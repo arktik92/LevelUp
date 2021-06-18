@@ -14,10 +14,12 @@ import Firebase
 struct LevelUpApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self)
     var delegate
+    @StateObject var points : Player = Player()
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .preferredColorScheme(.light)
+                .environmentObject(points)
         }
     }
 }
@@ -31,3 +33,4 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
 }
+

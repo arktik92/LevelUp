@@ -9,9 +9,10 @@ import SwiftUI
 
 struct GameProfile: View {
     let game : Game
-    @Binding var affiche : Bool
+    @Binding var popUp : Bool
     var columns: [GridItem] =
         Array(repeating: .init(.flexible()), count: 3)
+   
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -81,7 +82,24 @@ struct GameProfile: View {
                             
                         }
                     }.padding(.horizontal,15)
-                    Button(){}label:{
+                   
+                    if game.gameImg == "cocktail" {
+                        NavigationLink(
+                            destination: Game2Onboarding(),
+                            label: {
+                               
+                                    VStack {
+                                        Text("Commencer à jouer").foregroundColor(.white)
+                                            .fixedSize(horizontal: true, vertical: false)
+                                            .padding(.vertical,10)
+                                            .padding(.horizontal,30)
+                                            .background(Color("violet"))
+                                            .cornerRadius(20)
+                                            .font(Font.custom("SFUIDisplay-Regular", size:21))
+                                    }.frame(maxWidth: .infinity, alignment: .center)
+                                
+                            })
+                    } else {
                         VStack {
                             Text("Commencer à jouer").foregroundColor(.white)
                                 .fixedSize(horizontal: true, vertical: false)
@@ -90,8 +108,12 @@ struct GameProfile: View {
                                 .background(Color("violet"))
                                 .cornerRadius(20)
                                 .font(Font.custom("SFUIDisplay-Regular", size:21))
-                        }.frame(maxWidth: .infinity, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        }.frame(maxWidth: .infinity, alignment: .center)
+                    
+                
                     }
+                    
+                    
                 }.padding(.horizontal,10)
                 .padding(.vertical,30)
                 VStack {
@@ -99,7 +121,7 @@ struct GameProfile: View {
                         Spacer()
                         Button(){
                             withAnimation(.easeInOut){
-                                affiche=false
+                                popUp.toggle()
                             }
                         }label:{
                                 Image(systemName: "xmark.circle.fill")
@@ -119,8 +141,8 @@ struct GameProfile: View {
 
 struct GameProfile_Previews: PreviewProvider {
     static var previews: some View {
-        GameProfile(game:GAME2,affiche:.constant(true))
-        
+        GameProfile(game:GAME1, popUp: .constant(true))
+           
         
     }
 }

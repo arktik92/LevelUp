@@ -9,10 +9,10 @@ import SwiftUI
 
 struct PlayersProfile: View {
     var player: Player
-    
+    @EnvironmentObject var points : Player
     var body: some View {
         ZStack{
-            Color("bleuNuit")
+            BackgroundViews()
             ScrollView {
                 VStack{
                     // EN-TETE HELLO XxxXxxX --------------------------------------
@@ -47,7 +47,7 @@ struct PlayersProfile: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: 50, maxHeight: 50, alignment: .leading)
-                            Text("\(player.totalEtoile)")
+                            Text("\(points.totalEtoile)")
                                 .padding()
                                 .font(Font.title2.bold())
                             Spacer()
@@ -80,7 +80,7 @@ struct PlayersProfile: View {
                                 Text("\(player.achievedGame.count)")
                                     .foregroundColor(Color("violet"))
                                     .font(Font.title.bold())
-                                Text("Serious Game accomplis")
+                                Text("Serious Game\naccomplis")
                                     .multilineTextAlignment(.center)
                             }.padding()
                             VStack{
@@ -157,7 +157,7 @@ struct PlayersProfile_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             PlayersProfile(player: PLAYER1)
-            
+                .environmentObject(Player())
         }
     }
 }

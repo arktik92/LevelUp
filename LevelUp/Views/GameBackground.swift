@@ -10,18 +10,15 @@ import SwiftUI
 struct GameBackground: View {
     var gamePlanet = PLANET2 //ici remplacer par un binding de type chosenPlanet qui aurait son @State dans Universe.swift
     @State private var rotationPlanet = false
+    var gameTitle: String
     
     var body: some View {
         ZStack{
-            Color("bleuNuit")
-                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            Image("fondEtoile")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            BackgroundViews()
             
             VStack{
                 HStack {
-                    Text("La Science dans la survie")
+                    Text(gameTitle)
                         .gradientForeground(colors: [Color("rouge"), Color("violet")])
                         .font(Font.custom("Revalia", size: 25))
                         .multilineTextAlignment(.center)
@@ -59,7 +56,7 @@ extension View {
 
 struct GameBackground_Previews: PreviewProvider {
     static var previews: some View {
-        GameBackground()
+        GameBackground(gameTitle: "Ici le titre")
     }
 }
 
