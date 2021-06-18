@@ -8,54 +8,73 @@
 import SwiftUI
 
 struct Game2: View {
+    @Binding var StartGame: Bool
     
     var myGameDrag : Game
-    
+    @State var isValidate: Bool = false
+    @Binding var popUpIsActive: Bool
     @State private var rotationPlanet = false
     @StateObject var gridData = GridViewModel()
     let rows = Array(repeating: GridItem(.flexible(), spacing: 10), count: 1)
     
     var body: some View {
         
-        VStack {
-            ZStack {
-                RoundedRectangle(cornerRadius: 25.0)
-                    .padding()
-                    .foregroundColor(.white)
-                    .opacity(0.8)
-                    .frame(height: 390, alignment: .center)
-                VStack {
-                    Image(myGameDrag.gameImg)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                        .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    
-                    
-                    Text(myGameDrag.gameDescription)
-                        .font(.custom("SFUIDisplay-Light", size: 18))
-                        .foregroundColor(Color("bleuNuit"))
-                        .multilineTextAlignment(.center)
+        ZStack {
+            VStack {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 25.0)
                         .padding()
-                }
-            }
-            
-            VStack{
-                LazyHGrid(rows:rows,spacing: 20, content: {
-                    ForEach(gridData.gridItems){ grid in
-                        ZStack {
-                            Color.white
-                                .opacity(0.8)
-                            Text(grid.gridText)
-                                .foregroundColor(Color("rouge"))
-                        }.frame( width: 90,height: 90)
-                        .cornerRadius(50)
-                        .onDrag({
-                                    gridData.currentGrid = grid
-                                    return NSItemProvider(object: String(grid.gridText) as NSString)})
-                        .onDrop(of:[.text], delegate: DropViewDelegate(grid: grid,gridData: gridData))
+                        .foregroundColor(.white)
+                        .opacity(0.8)
+                        .frame(height: 390, alignment: .center)
+                    VStack {
+                        Image(myGameDrag.gameImg)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .clipShape(Circle())
+                            .frame(width: 200, height: 200, alignment: .center)
+                        
+                        
+                        Text(myGameDrag.gameDescription)
+                            .font(.custom("SFUIDisplay-Light", size: 18))
+                            .foregroundColor(Color("bleuNuit"))
+                            .multilineTextAlignment(.center)
+                            .padding()
                     }
-                }).frame(width: 90, height: 90, alignment: .center)
+                }
+                
+                VStack{
+                    LazyHGrid(rows:rows,spacing: 20, content: {
+                        ForEach(gridData.gridItems){ grid in
+                            ZStack {
+                                Color.white
+                                    .opacity(0.8)
+                                Text(grid.gridText)
+                                    .foregroundColor(Color("rouge"))
+                            }.frame( width: 90,height: 90)
+                            .cornerRadius(50)
+                            .onDrag({
+                                        gridData.currentGrid = grid
+                                        return NSItemProvider(object: String(grid.gridText) as NSString)})
+                            .onDrop(of:[.text], delegate: DropViewDelegate(grid: grid,gridData: gridData))
+                        }
+                    }).frame(width: 90, height: 90, alignment: .center)
+                }
+                Button(action: {
+                    isValidate.toggle()
+                }, label: {
+                    Rectangle()
+                        .foregroundColor(.white)
+                        .clipShape(Capsule())
+                        .frame(width: 200, height: 50, alignment: .center)
+                        .overlay(
+                        Text("Valider")
+                            .foregroundColor(.black)
+                        )
+                })
+            }
+            if isValidate {
+                PopUpEndOfGame(player: PLAYER1, game: GAME2, win: true, popUpIsActive: $popUpIsActive, startGame: $StartGame, isValidate: $isValidate)
             }
         }
     }
@@ -65,7 +84,7 @@ struct Game2_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             GameBackground(gamePlanet: PLANET2, gameTitle: "La masse volumique pour... Créer des Cocktails pour tes potes")
-            Game2(myGameDrag: GAME1)
+            Game2(StartGame: .constant(true), myGameDrag: GAME1, isValidate: true, popUpIsActive: .constant(true))
         }
     }
 }

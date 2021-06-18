@@ -55,7 +55,6 @@
 		709DFAFC267C8190001CDDF6 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709DFAFA267C8190001CDDF6 /* QuestionView.swift */; };
 		709DFAFD267C8190001CDDF6 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709DFAFB267C8190001CDDF6 /* QuizView.swift */; };
 		709DFAFF267C819B001CDDF6 /* BackgroundRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709DFAFE267C819B001CDDF6 /* BackgroundRectangle.swift */; };
-		709DFB01267CAA5D001CDDF6 /* test3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709DFB00267CAA5D001CDDF6 /* test3D.swift */; };
 		D39EAD3C267250BF00DC0806 /* LevelUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EAD3B267250BF00DC0806 /* LevelUpApp.swift */; };
 		D39EAD3E267250BF00DC0806 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EAD3D267250BF00DC0806 /* ContentView.swift */; };
 		D39EAD43267250C300DC0806 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D39EAD42267250C300DC0806 /* Preview Assets.xcassets */; };
@@ -120,7 +119,6 @@
 		709DFAFA267C8190001CDDF6 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		709DFAFB267C8190001CDDF6 /* QuizView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		709DFAFE267C819B001CDDF6 /* BackgroundRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundRectangle.swift; sourceTree = "<group>"; };
-		709DFB00267CAA5D001CDDF6 /* test3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test3D.swift; sourceTree = "<group>"; };
 		7C12331BD05D7CA314D5D51D /* Pods-LevelUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelUp.debug.xcconfig"; path = "Target Support Files/Pods-LevelUp/Pods-LevelUp.debug.xcconfig"; sourceTree = "<group>"; };
 		D39EAD38267250BF00DC0806 /* LevelUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LevelUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39EAD3B267250BF00DC0806 /* LevelUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelUpApp.swift; sourceTree = "<group>"; };
@@ -241,9 +239,8 @@
 				70160318267A1BBF00225CA0 /* SignInGC.swift */,
 				70160316267A1A9B00225CA0 /* SignInEmail.swift */,
 				70487419267B4FCA00263425 /* Universe.swift */,
-				709DFB00267CAA5D001CDDF6 /* test3D.swift */,
-				701081FB26791A6900288D76 /* ModalConnexionValid.swift */,
 				D39EAD6D267348FF00DC0806 /* PlanetView.swift */,
+				701081FB26791A6900288D76 /* ModalConnexionValid.swift */,
 				70487411267B4FB000263425 /* PhotoCaptureView.swift */,
 				7048740F267B4F9B00263425 /* RadarChartView.swift */,
 				70487415267B4FBF00263425 /* BackgroundViews.swift */,
@@ -450,7 +447,6 @@
 				7048742F267B502F00263425 /* Game1.swift in Sources */,
 				70160319267A1BBF00225CA0 /* SignInGC.swift in Sources */,
 				701603152679E7F900225CA0 /* LoginModel.swift in Sources */,
-				709DFB01267CAA5D001CDDF6 /* test3D.swift in Sources */,
 				7048741A267B4FCA00263425 /* Universe.swift in Sources */,
 				709DFAFD267C8190001CDDF6 /* QuizView.swift in Sources */,
 				701081FC26791A6900288D76 /* ModalConnexionValid.swift in Sources */,

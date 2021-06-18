@@ -16,12 +16,12 @@ struct Onboarding: View {
     
     var body: some View {
         VStack {
-                  // 2.
+                  
                   if self.isActive {
-                      // 3.
+                     
                       Connexion()
                   } else {
-                      // 4.
+                     
                     ZStack{
                         BackgroundViews()
                 

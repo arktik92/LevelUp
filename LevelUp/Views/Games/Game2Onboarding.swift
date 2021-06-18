@@ -9,20 +9,20 @@ import SwiftUI
 
 struct Game2Onboarding: View {
     @State private var isWalkthroughViewShowing = true
-    
+    @Binding var startGame: Bool
+    @Binding var popUpIsActive: Bool
     var body: some View {
-        Group{
-            if isWalkthroughViewShowing{
-                Game2WalkthroughView(isWalkthroughViewShowing: $isWalkthroughViewShowing)
+                    if isWalkthroughViewShowing{
+                Game2WalkthroughView(startGame: $startGame, popUpIsActive: $popUpIsActive, isWalkthroughViewShowing: $isWalkthroughViewShowing)
             } else {
                 //Text("hello").padding()
-            }
+            
         }
     }
 }
 
 struct Game2Onboarding_Previews: PreviewProvider {
     static var previews: some View {
-        Game2Onboarding()
+        Game2Onboarding(startGame: .constant(true), popUpIsActive: .constant(true))
     }
 }

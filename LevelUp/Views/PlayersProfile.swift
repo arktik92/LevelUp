@@ -20,7 +20,7 @@ struct PlayersProfile: View {
                         Image(player.playerImg)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: 100, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(minWidth: 0, idealWidth: 100, maxWidth: 100, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
                             .padding(.vertical)
                         Text("Hello \(player.playerName)")
                             .foregroundColor(.white)
@@ -40,7 +40,7 @@ struct PlayersProfile: View {
                     }
                     
                     //HIGHLIGHTS ETOILE && BADGE ----------------------------------
-                    HStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10){
+                    HStack (alignment: .center, spacing: 10){
                         HStack{
                             Spacer()
                             Image("ptsEtoile")
@@ -108,7 +108,7 @@ struct PlayersProfile: View {
                                         Image("\(achiev.imageName)")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: 100, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                            .frame(minWidth: 0, idealWidth: 100, maxWidth: 100, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
                                         Text("\(achiev.name)")
                                         Text("\(achiev.shortDescription)")
                                             .font(.caption2)
@@ -136,7 +136,7 @@ struct PlayersProfile: View {
                                         Image("\(onePlanet.planetImg)")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: 100, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                            .frame(minWidth: 0, idealWidth: 100, maxWidth: 100, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
                                         Text("\(onePlanet.planetName)")
                                     }
                                     .padding()

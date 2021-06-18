@@ -9,14 +9,17 @@ import SwiftUI
 
 struct GameProfile: View {
     let game : Game
-    @Binding var popUp : Bool
+    @Binding var startGame: Bool
     var columns: [GridItem] =
         Array(repeating: .init(.flexible()), count: 3)
    
     var body: some View {
+        ZStack {
+            BackgroundViews()
         GeometryReader { geo in
-            ZStack {
+            
                 BackgroundRectangle(color: "vert")
+                    .edgesIgnoringSafeArea(.all)
                 VStack {
                     //IMAGE
                     Image(game.gameImg)
@@ -84,34 +87,22 @@ struct GameProfile: View {
                     }.padding(.horizontal,15)
                    
                     if game.gameImg == "cocktail" {
-                        NavigationLink(
-                            destination: Game2Onboarding(),
-                            label: {
-                               
-                                    VStack {
-                                        Text("Commencer à jouer").foregroundColor(.white)
-                                            .fixedSize(horizontal: true, vertical: false)
-                                            .padding(.vertical,10)
-                                            .padding(.horizontal,30)
-                                            .background(Color("violet"))
-                                            .cornerRadius(20)
-                                            .font(Font.custom("SFUIDisplay-Regular", size:21))
-                                    }.frame(maxWidth: .infinity, alignment: .center)
-                                
-                            })
-                    } else {
-                        VStack {
-                            Text("Commencer à jouer").foregroundColor(.white)
-                                .fixedSize(horizontal: true, vertical: false)
-                                .padding(.vertical,10)
-                                .padding(.horizontal,30)
-                                .background(Color("violet"))
-                                .cornerRadius(20)
-                                .font(Font.custom("SFUIDisplay-Regular", size:21))
-                        }.frame(maxWidth: .infinity, alignment: .center)
-                    
-                
-                    }
+                       
+                        Button(action: {
+                            startGame.toggle()
+                        }, label: {
+                            VStack {
+                                Text("Commencer à jouer").foregroundColor(.white)
+                                    .fixedSize(horizontal: true, vertical: false)
+                                    .padding(.vertical,10)
+                                    .padding(.horizontal,30)
+                                    .background(Color("violet"))
+                                    .cornerRadius(20)
+                                    .font(Font.custom("SFUIDisplay-Regular", size:21))
+                            }.frame(maxWidth: .infinity, alignment: .center)
+                        })
+                            
+                    } 
                     
                     
                 }.padding(.horizontal,10)
@@ -119,21 +110,21 @@ struct GameProfile: View {
                 VStack {
                     HStack {
                         Spacer()
-                        Button(){
-                            withAnimation(.easeInOut){
-                                popUp.toggle()
-                            }
-                        }label:{
-                                Image(systemName: "xmark.circle.fill")
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 35))
-                        }
+//                        Button(){
+//                            withAnimation(.easeInOut){
+//                                popUpIsActive.toggle()
+//                            }
+//                        }label:{
+//                                Image(systemName: "xmark.circle.fill")
+//                                    .foregroundColor(.white)
+//                                    .font(.system(size: 35))
+//                        }
                     }
                     Spacer()
                 }.padding(.horizontal,10)
                 .padding(.vertical,10)
             }
-        }
+        }.navigationBarHidden(true)
     }
 }
 
@@ -141,7 +132,7 @@ struct GameProfile: View {
 
 struct GameProfile_Previews: PreviewProvider {
     static var previews: some View {
-        GameProfile(game:GAME1, popUp: .constant(true))
+        GameProfile(game: GAME1, startGame: .constant(true))
            
         
     }

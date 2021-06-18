@@ -10,38 +10,30 @@ import SwiftUI
 struct PlanetView: View {
     var planet: Planet
     var player: Player
-    @State var popUp = false
-    @State var affiche = false
+    @State var startGame: Bool = false
     @State private var rotationState: Double = 0
+    @State private var popUpIsActive = false
     var body: some View {
         ZStack {
             //---------------BACKGROUND--------------------------
            BackgroundViews()
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                
-                    HStack {
-                        
-                        Spacer()
-                        Button(action: {
-                            self.popUp.toggle()
-                        }, label: {
-                            Image("alien1")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(height: 50)
-                                .offset(y: 50)
-                                .padding()
-                                
-                        })
-                        Image("alien2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 50)
-                            .padding()
-                    }
-                    
-                
+                HStack {
+                    Image("alien1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 50)
+                        .offset(y: 50)
+                        .padding()
+                    Spacer()
+                    Image("alien2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 50)
+                        .padding()
+                        .offset(x: -60, y: 120)
+                }
                 Spacer()
                 HStack {
                     Image("alien3")
@@ -59,24 +51,27 @@ struct PlanetView: View {
                 }
             }
             //------------------PLANET ------------------------------
-            PlanetFormatted(planet: planet, rotationState: $rotationState)
-            
-            if popUp == true {
-                GameProfile(game: GAME1, popUp: $popUp)
+            PlanetFormatted(planet: planet, rotationState: $rotationState, popUpIsActive: $popUpIsActive, startGame: $startGame)
+            if popUpIsActive {
+                GameProfile(game: GAME1, startGame: $startGame)
             }
-        }.navigationBarHidden(true)
+            if startGame {
+                Game2Onboarding(startGame: $startGame, popUpIsActive: $popUpIsActive)
+            }
+        }
     }
 }
-struct PlanetView_Previews: PreviewProvider {
-    static var previews: some View {
-   
-            PlanetView(planet: PLANET10, player: PLAYER1)
-        
-    }
-}
+
+
+
+
+
+
 struct PlanetFormatted: View {
     var planet: Planet
     @Binding var rotationState: Double
+    @Binding var popUpIsActive: Bool
+    @Binding var startGame: Bool
     var body: some View {
         ZStack {
             if planet.planetImg == "planetOrTwo" {
@@ -96,11 +91,16 @@ struct PlanetFormatted: View {
                                 self.rotationState += Double(value.translation.height) / 20.0                            }
                 )
                 .overlay(
-                    Image("astro1")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 50)
-                        .offset(y: -125)
+                    Button(action: {
+                        popUpIsActive.toggle()
+                    }, label: {
+                        Image("astro1")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 50)
+                           
+                    })  .offset(y: -125)
+                    
                 )
         }
     }
@@ -116,10 +116,42 @@ struct pointEtoile: View {
                     .frame(height: 50)
                 Text("\(player.totalEtoile)")
                     .foregroundColor(.white)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .font(.title)
                 Spacer()
             }
             Spacer()
         }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+struct PlanetView_Previews: PreviewProvider {
+    static var previews: some View {
+   
+        PlanetView(planet: PLANET10, player: PLAYER1)
+        PlanetView(planet: PLANET9, player: PLAYER1)
+        PlanetView(planet: PLANET8, player: PLAYER1)
+        PlanetView(planet: PLANET7, player: PLAYER1)
+        PlanetView(planet: PLANET6, player: PLAYER1)
+        PlanetView(planet: PLANET5, player: PLAYER1)
+        PlanetView(planet: PLANET4, player: PLAYER1)
+        PlanetView(planet: PLANET3, player: PLAYER1)
+        PlanetView(planet: PLANET12, player: PLAYER1)
+        
+        
+        
     }
 }

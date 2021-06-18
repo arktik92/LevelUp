@@ -95,10 +95,11 @@ let PLANET7 = Planet(planetName: "xxxx", planetImg: "planetBulle", planetDescrip
 let PLANET8 = Planet(planetName: "xxxx", planetImg: "planetAnneau2", planetDescription: "Une planète très similaire à la Terre. Son domaine est l'Histoire'", planetGames: MY_GAMES2)
 let PLANET9 = Planet(planetName: "xxxx", planetImg: "planetAnneau", planetDescription: "Une planète en menace d'extinction. Son domaine est la Philosophie", planetGames: MY_GAMES3)
 let PLANET10 = Planet(planetName: "Celinus", planetImg: "planetOrTwo", planetDescription: "La science dans ton quotidien. Cette planète a une avance scientifique de plusieurs dizaines d'années comparée à la Terre. Son domaine est la Science", planetGames: MY_GAMES1)
+let PLANET12 = Planet(planetName: "xxxx", planetImg: "planetAnneau12", planetDescription: "Une planète en menace d'extinction. Son domaine est la Philosophie", planetGames: MY_GAMES2)
 
 
 let MY_PLANETS = [PLANET1,PLANET2,PLANET3,PLANET4,PLANET5,PLANET6,PLANET7,PLANET8,PLANET9]
-let MY_PLANETS2 = [PLANET10,PLANET2,PLANET3,PLANET4,PLANET5,PLANET6,PLANET7,PLANET8,PLANET9]
+let MY_PLANETS2 = [PLANET10,PLANET12,PLANET3,PLANET4,PLANET5,PLANET6,PLANET7,PLANET8,PLANET9]
 
 
 // Les tableaux de View par Game ------------------------------------------------
@@ -106,7 +107,7 @@ let MY_PLANETS2 = [PLANET10,PLANET2,PLANET3,PLANET4,PLANET5,PLANET6,PLANET7,PLAN
 // Les tableaux de View par Game ------------------------------------------------
 
 let game1Views : [Any] = [Game1(), Game1e2()]
-let game2Views : [Any] = [Game2(myGameDrag: GAME1)]
+let game2Views : [Any] = [Game2(StartGame: .constant(true) , myGameDrag: GAME1, popUpIsActive: .constant(true))]
 let game3Views : [Any] = [Game3(player: PLAYER1, planetImg: ""), QuizView(planetImg: "", player: PLAYER1, showGame: .constant(true))]
 
 // Les données du quizz GAME3 ------------------------------------------------

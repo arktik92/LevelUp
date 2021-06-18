@@ -9,7 +9,6 @@ import SwiftUI
 
 struct Game3TabView: View {
     @Binding var selection: Int
-
     var body: some View {
         TabView(selection: $selection) {
             ForEach(game3Views.indices, id: \.self) { index in

@@ -78,11 +78,6 @@ struct QuizView: View {
                 }
                 .frame(width: 350, height: 550, alignment: .center)
             }
-            
-            if popupShow{
-                PopUpEndOfGame(player: player, game: game, win: (juste/Double(quiz.count)) >= 0.5 ? true : false, showGame: $showGame)
-                    .frame(width: 350, height: 525, alignment: .center)
-            }
         }
     }
 }
