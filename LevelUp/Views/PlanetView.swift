@@ -150,7 +150,7 @@ struct PlanetView_Previews: PreviewProvider {
         PlanetView(planet: PLANET4, player: PLAYER1)
         PlanetView(planet: PLANET3, player: PLAYER1)
         PlanetView(planet: PLANET12, player: PLAYER1)
-        
+        PlanetView(planet: PLANET1, player: PLAYER4)
         
         
     }
