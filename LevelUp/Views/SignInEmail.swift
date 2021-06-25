@@ -46,6 +46,7 @@ struct SignInEmail: View {
                     Rectangle()
                         .clipShape(Capsule())
                     TextField("Ton adresse e-mail", text: $username)
+                        .textCase(.lowercase)
                         .keyboardType(.emailAddress)
                         .disableAutocorrection(true)
                         .foregroundColor(Color("bleuNuit"))
@@ -67,7 +68,7 @@ struct SignInEmail: View {
                         .multilineTextAlignment(.center)
                 }.foregroundColor(.white)
                 .frame(width: 300, height: 50, alignment: .center)
-                if username != "" && password.count > 4 {
+                
                     Button(action: {
                         Auth.auth().signIn(withEmail: username, password: password) { (authDataResult, error) in
                             if error != nil {
@@ -80,39 +81,26 @@ struct SignInEmail: View {
                             }
                         }
                     }, label: {
-                        Spacer()
+                        
                         ZStack {
                             Rectangle()
                                 .clipShape(Capsule())
                                 .foregroundColor(Color("violet"))
                                 .frame(width: 150, height: 50, alignment: .center)
-                                .padding()
                                 .overlay(
                             Text("Se connecter")
                                 .foregroundColor(.white)
                             )
                         }
-                    }) .fullScreenCover(isPresented: $showMain, content: {
+                    }).padding()
+                    .fullScreenCover(isPresented: $showMain, content: {
                         Universe(myPlayer: PLAYER1, planetList: MY_PLANETS)
                     })
-                } else {
-                    ZStack {
-                        Rectangle()
-                            .clipShape(Capsule())
-                            .foregroundColor(Color("violet"))
-                            .frame(width: 150, height: 50, alignment: .center)
-                            .padding()
-                            .overlay(
-                        Text("Se connecter")
-                                    .foregroundColor(.white)
-                                
-                        )
-                    }
+              
                 }
             }
         }
     }
-}
 
 
 

@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct GameBackground: View {
-    var gamePlanet = PLANET2 //ici remplacer par un binding de type chosenPlanet qui aurait son @State dans Universe.swift
+    var gamePlanet = PLANET1 //ici remplacer par un binding de type chosenPlanet qui aurait son @State dans Universe.swift
     @State private var rotationPlanet = false
+    @State private var chatFriend = false
     var gameTitle: String
     
     var body: some View {
@@ -17,32 +18,37 @@ struct GameBackground: View {
             BackgroundViews()
             
             VStack{
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Button(action: {
+                    chatFriend = true
+                }, label: {
                     Image(systemName:"person.fill.badge.plus")
                         .foregroundColor(Color("rouge"))
                         .font(.largeTitle)
                         .frame(minWidth:350, alignment: .trailing)
                 })
-                
-                Image("\(gamePlanet.planetImg)")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 80)
-                    .rotationEffect(.degrees(rotationPlanet ? 360 : 0))
-                    .animation(.linear(duration: 30.0))
-                
+               
                 HStack {
+                    Image("\(gamePlanet.planetImg)")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 80)
+                        .padding()
+                        .rotationEffect(.degrees(rotationPlanet ? 360 : 0))
+                        .animation(.linear(duration: 30.0))
+                    
                     Text(gameTitle)
                         .gradientForeground(colors: [Color("rouge"), Color("violet")])
                         .font(Font.custom("Revalia", size: 22))
                         .multilineTextAlignment(.center)
                         .lineLimit(nil)
-               
+                        .padding()
                 }
              
                 
                 Spacer()
-            }
+            }.sheet(isPresented: $chatFriend, content: {
+                FriendList(chatFriend: $chatFriend)
+            })
         }
         .onAppear { rotationPlanet = true }
     }
@@ -52,8 +58,8 @@ struct GameBackground: View {
 extension View {
     public func gradientForeground(colors: [Color]) -> some View {
         self.overlay(LinearGradient(gradient: .init(colors: colors),
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing))
+                                    startPoint: .top,
+                                    endPoint: .bottom))
             .mask(self)
     }
 }

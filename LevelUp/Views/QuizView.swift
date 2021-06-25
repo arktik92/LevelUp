@@ -20,7 +20,7 @@ struct QuizView: View {
     @State private var juste : Double = 0
     @State private var popupShow : Bool = false
     @EnvironmentObject var points : Player
-    
+    @Binding var score: Int
     
     var body: some View {
         ZStack {
@@ -58,30 +58,38 @@ struct QuizView: View {
                             .font(.custom("SFUIDisplay-Light", size: 20))
                         Spacer()
                         if counter==quiz.count-1{
-                            Button(action:{ withAnimation(.default){
-                                if quiz[counter].selectedInt == quiz[counter].reponse{
-                                    juste+=1
-                                }
-                                if juste/Double(quiz.count) >= 0.5{
-                                    isValidatewin.toggle()
-                                }
-                                else if juste/Double(quiz.count) < 0.5{
-                                    isValidatelose.toggle()
-                                }
-
-                            }},
-                            label:{
-                                
-                                Text("Valider")
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal,50)
-                                    .padding(.vertical,12)
-                                    .background(Color("rouge"))
-                                    .cornerRadius(30)
-                                    .font(.custom("SFUIDisplay-Light", size: 23))
-                                    .shadow(color: .black, radius: 10, x: 5, y: 5)
-                                
-                            })
+//                            Button(action:{ withAnimation(.default){
+//                                if juste/Double(quiz.count) >= 0.5{
+//                                    isValidatewin.toggle()
+//                                }
+//                                else if juste/Double(quiz.count) < 0.5{
+//                                    isValidatelose.toggle()
+//                                }
+//                                do {
+//                                    sonValidate = try AVAudioPlayer(contentsOf: urlValidate)
+//                                    sonValidate?.play()
+//                                } catch {
+//                                    // couldn't load file :(
+//                                }
+//
+//                                score = Int(juste/(Double(quiz.count))*100)
+//                                counter=0
+//                                juste=0
+//
+//                            }},
+//                            label:{
+//
+//                                Text("Valider")
+//                                    .foregroundColor(.white)
+//                                    .padding(.horizontal,50)
+//                                    .padding(.vertical,12)
+//                                    .background(Color("rouge"))
+//                                    .cornerRadius(30)
+//                                    .font(.custom("SFUIDisplay-Light", size: 23))
+//                                    .shadow(color: .black, radius: 10, x: 5, y: 5)
+//
+//                            })
+                            ButtonView(counter: $counter, juste: $juste, quiz: QuizPotager, score: $score, isValidateWin: $isValidatewin, isValidateLose: $isValidatelose)
                         }
                         
                         
@@ -100,7 +108,7 @@ struct Game3Game_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             GameBackground(gamePlanet: PLANET2, gameTitle: "La Science dans ton quotidien")
-            QuizView(planetImg: "planetTerre", startGame: .constant(true), popUpIsActive: .constant(true), isValidatelose: .constant(false), isValidatewin: .constant(false), player: PLAYER1)
+            QuizView(planetImg: "planetTerre", startGame: .constant(true), popUpIsActive: .constant(true), isValidatelose: .constant(false), isValidatewin: .constant(false), player: PLAYER1, score: .constant(0))
         }
     }
 }

@@ -12,19 +12,25 @@ struct Game2WalkthroughView: View {
     @Binding var popUpIsActive: Bool
     @State private var selection = 0
     @Binding var isWalkthroughViewShowing: Bool
-    @State var isValidate = false
+    @State var isValidateWin = false
+    @State var isValidateLose = false
     var body: some View {
         ZStack{
-            GameBackground(gameTitle: "La masse volumique pour créer des cocktails pour tes potes")
+            GameBackground(gameTitle: "La science dans ton quotidien")
             VStack{
-                Game2TabView(startGame: $startGame, popUpIsActive: $popUpIsActive, selection: $selection, isValidate: $isValidate)
+                Game2TabView(startGame: $startGame, popUpIsActive: $popUpIsActive, selection: $selection, isValidateWin: $isValidateWin,isValidateLose: $isValidateLose)
                     .padding(.top, 170)
             }
             
-            if isValidate {
-                PopUpEndOfGame(player: PLAYER1, game: GAME2, win: true, popUpIsActive: $popUpIsActive, startGame: $startGame, isValidate: $isValidate)
+            if isValidateWin {
+                PopUpEndOfGame(player: PLAYER1, game: GAME1, win: true, score: .constant(100), popUpIsActive: $popUpIsActive, startGame: $startGame, isValidate: $isValidateWin)
+                    .ignoresSafeArea()
+            }else if isValidateLose{
+                PopUpEndOfGame(player: PLAYER1, game: GAME1, win: false, score: .constant(0), popUpIsActive: $popUpIsActive, startGame: $startGame, isValidate: $isValidateLose)
                     .ignoresSafeArea()
             }
+        }.onAppear{
+            audioPlayer?.numberOfLoops = -1
         }
         .transition(.move(edge: .bottom))
     }

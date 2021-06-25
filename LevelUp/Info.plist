@@ -22,12 +22,13 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SFBlack.otf</string>
-		<string>SFHeavy.otf</string>
-		<string>SFRegular.otf</string>
-		<string>SFThin.otf</string>
-		<string>SFLight.ttf</string>
+		<string>SFUIDisplay-Black.otf</string>
+		<string>SFUIDisplay-Heavy.otf</string>
+		<string>SFUIDisplay-Regular.otf</string>
+		<string>SFUIDisplay-Thin.otf</string>
+		<string>SFUIDisplay-Light.ttf</string>
 		<string>Revalia-Regular.ttf</string>
+		<string></string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

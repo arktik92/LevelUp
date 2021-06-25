@@ -4,12 +4,13 @@
 //
 //  Created by Laura LONG on 11/06/2021.
 //
-
+import AVFoundation
 import SwiftUI
 import AuthenticationServices
 import GameKit
 
 struct Universe: View {
+    @State private var sonValidate : AVAudioPlayer?
     @State private var backButton = false
     @State var showPlayerProfile = false
     @State var showTutorial = false
@@ -21,12 +22,12 @@ struct Universe: View {
     let localPlayer = GKLocalPlayer.local
     //work
     @State private var rotationPlanet = false
-//    init() {
-//
-//        UINavigationBar.appearance().barTintColor = .clear
-//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-//   return
-//    }
+    //    init() {
+    //
+    //        UINavigationBar.appearance().barTintColor = .clear
+    //        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+    //   return
+    //    }
     //FONCTION AUTHENTICATEUSER
     func authenticateUser() {
         localPlayer.authenticateHandler = { vc, error in
@@ -40,7 +41,8 @@ struct Universe: View {
     
     //BODY
     var body: some View {
-        
+        let pathValidate = Bundle.main.path(forResource: "SonBouton1.mp3", ofType:nil)!
+        let urlValidate = URL(fileURLWithPath: pathValidate)
         NavigationView {
             ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
                 BackgroundViews()
@@ -77,10 +79,10 @@ struct Universe: View {
                         //FIRST ROW ------------------
                         HStack (spacing: 80){
                             VStack{
-                            onePlanet(planetImageName: "planetRouge", planetWidth: 100, planetHeight: 100)
-                                .padding()
-                                .rotationEffect(.degrees(rotationPlanet ? 0 : 360))
-                                .animation(Animation.linear(duration: 100).repeatForever(autoreverses: true))
+                                onePlanet(planetImageName: "planetRouge", planetWidth: 100, planetHeight: 100)
+                                    .padding()
+                                    .rotationEffect(.degrees(rotationPlanet ? 0 : 360))
+                                    .animation(Animation.linear(duration: 100).repeatForever(autoreverses: true))
                                 Text("Maths")
                                     .font(.custom("Revalia", size: 20))
                                     .multilineTextAlignment(.center)
@@ -101,9 +103,9 @@ struct Universe: View {
                                 .animation(Animation.linear(duration: 5).repeatForever(autoreverses: false))
                             invisibleObject(invisibleWidth: 30, invisibleHeight: 30)
                             VStack{
-                            onePlanet(planetImageName: "planetTerre", planetWidth: 150, planetHeight: 150)
-                                .rotationEffect(.degrees(rotationPlanet ? 360 : 0))
-                                .animation(Animation.linear(duration: 150).repeatForever(autoreverses: true))
+                                onePlanet(planetImageName: "planetTerre", planetWidth: 150, planetHeight: 150)
+                                    .rotationEffect(.degrees(rotationPlanet ? 360 : 0))
+                                    .animation(Animation.linear(duration: 150).repeatForever(autoreverses: true))
                                 Text("Litterature")
                                     .font(.custom("Revalia", size: 20))
                                     .multilineTextAlignment(.center)
@@ -111,8 +113,8 @@ struct Universe: View {
                             }
                             invisibleObject(invisibleWidth: 30, invisibleHeight: 30)
                             VStack{
-                            onePlanet(planetImageName: "planetAnneau2", planetWidth: 120, planetHeight: 120)
-                                .padding(.top, 90)
+                                onePlanet(planetImageName: "planetAnneau2", planetWidth: 120, planetHeight: 120)
+                                    .padding(.top, 90)
                                 
                                 Text("Art")
                                     .font(.custom("Revalia", size: 20))
@@ -133,8 +135,8 @@ struct Universe: View {
                                 destination: PlanetView(backButton: $backButton, planet: PLANET10, player: PLAYER1, game: GAME1),isActive: $backButton,
                                 label: {
                                     VStack{
-                                    onePlanet(planetImageName: "planetOr", planetWidth: 200, planetHeight: 200)
-                                        .padding(.top, 150)
+                                        onePlanet(planetImageName: "planetOr", planetWidth: 200, planetHeight: 200)
+                                            .padding(.top, 150)
                                         
                                         Text("Sciences")
                                             .font(.custom("Revalia", size: 20))
@@ -145,9 +147,9 @@ struct Universe: View {
                             Spacer()
                             Spacer()
                             VStack{
-                            onePlanet(planetImageName: "planetBulle", planetWidth: 150, planetHeight: 150)
-                                .offset(y: rotationPlanet ? 2 : 15)
-                                .animation(Animation.easeInOut(duration: 5).repeatForever(autoreverses: true))
+                                onePlanet(planetImageName: "planetBulle", planetWidth: 150, planetHeight: 150)
+                                    .offset(y: rotationPlanet ? 2 : 15)
+                                    .animation(Animation.easeInOut(duration: 5).repeatForever(autoreverses: true))
                                 Text("Géographie")
                                     .font(.custom("Revalia", size: 20))
                                     .multilineTextAlignment(.center)
@@ -160,9 +162,9 @@ struct Universe: View {
                             invisibleObject(invisibleWidth: 30, invisibleHeight: 30)
                             onePlanet(planetImageName: "planetGlace", planetWidth: 110, planetHeight: 110).padding(90)
                             VStack{
-                            onePlanet(planetImageName: "planetRandom", planetWidth: 200, planetHeight: 150).padding(.top, 100)
-                                .rotationEffect(.degrees(rotationPlanet ? 360 : 0))
-                                .animation(Animation.linear(duration: 150).repeatForever(autoreverses: true))
+                                onePlanet(planetImageName: "planetRandom", planetWidth: 200, planetHeight: 150).padding(.top, 100)
+                                    .rotationEffect(.degrees(rotationPlanet ? 360 : 0))
+                                    .animation(Animation.linear(duration: 150).repeatForever(autoreverses: true))
                                 Text("Au Pif")
                                     .font(.custom("Revalia", size: 20))
                                     .multilineTextAlignment(.center)
@@ -177,13 +179,13 @@ struct Universe: View {
                         //FIFTH ROW ----------
                         HStack {
                             VStack{
-                            onePlanet(planetImageName: "planetVerte", planetWidth: 150, planetHeight: 150)
+                                onePlanet(planetImageName: "planetVerte", planetWidth: 150, planetHeight: 150)
                                 Text("Histoire")
                                     .font(.custom("Revalia", size: 20))
                                     .multilineTextAlignment(.center)
                                     .foregroundColor(.white)
                             }
-                                
+                            
                             invisibleObject(invisibleWidth: 150, invisibleHeight: 150)
                             Image("rocket")
                                 .resizable()
@@ -198,11 +200,11 @@ struct Universe: View {
                 rotationPlanet = true
                 authenticateUser()
                 perform: do {
-                                    playSound(sound: "SonAcceuil", type: "mp3")
-                                }
-                
+                    playSound(sound: "SonAcceuil", type: "mp3")
+                }
+                audioPlayer?.numberOfLoops = -1
             }
-         
+            
             .navigationBarItems(leading: HStack{
                                     Image("ptsEtoile")
                                         .resizable()
@@ -224,7 +226,12 @@ struct Universe: View {
                                         
                                         Button(action: {
                                             showPlayerProfile.toggle()
-                                            playSound(sound: "SonButton1", type: "mp3")
+                                            do {
+                                                sonValidate = try AVAudioPlayer(contentsOf: urlValidate)
+                                                sonValidate?.play()
+                                            } catch {
+                                                // couldn't load file :(
+                                            }
                                             
                                         }, label: {
                                             Image("astroProfil")
@@ -242,8 +249,8 @@ struct Universe: View {
             
         })
         .fullScreenCover(isPresented: $showTutorial, content: {
-                    Tutorial(showTutorial: $showTutorial)
-                })
+            Tutorial(showTutorial: $showTutorial)
+        })
     }
 }
 
@@ -275,6 +282,7 @@ struct Universe_Previews: PreviewProvider {
         Universe(myPlayer: PLAYER1, planetList: MY_PLANETS)
             .previewDevice("iPhone 12")
             .environmentObject(Player())
+          
         
     }
 }
@@ -290,7 +298,7 @@ struct SoundButton: View {
                 audioPlayer?.pause()
                 
             }
-           
+            
             soundOff.toggle()
         }, label: {
             Image(systemName:(soundOff ? "speaker.slash": "speaker.wave.2"))

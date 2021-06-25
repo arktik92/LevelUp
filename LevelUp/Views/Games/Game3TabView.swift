@@ -13,6 +13,7 @@ struct Game3TabView: View {
     @Binding var selection: Int
     @Binding var isValidatelose : Bool
     @Binding var isValidatewin : Bool
+    @Binding var score: Int
     var body: some View {
         ZStack {
             TabView(selection: $selection) {
@@ -21,7 +22,7 @@ struct Game3TabView: View {
                         Game3(player: PLAYER1, planetImg: "", popUpIsActive: $popUpIsActive, startGame: $startGame)
                     } else if game3Views[index] is QuizView{
                         QuizView(planetImg: "", startGame: $startGame,popUpIsActive:$popUpIsActive, isValidatelose: $isValidatelose, isValidatewin: $isValidatewin
-                                , player: PLAYER1)
+                                 , player: PLAYER1, score: $score)
                     }
                 }
             }
@@ -35,7 +36,7 @@ struct Game3TabView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             GameBackground(gameTitle: "La science dans la survie")
-            Game3TabView(startGame:.constant(true),popUpIsActive:.constant(true),selection: Binding.constant(0), isValidatelose: .constant(true), isValidatewin: .constant(true))
+            Game3TabView(startGame:.constant(true),popUpIsActive:.constant(true),selection: Binding.constant(0), isValidatelose: .constant(true), isValidatewin: .constant(true), score: .constant(0))
         }
     }
 }

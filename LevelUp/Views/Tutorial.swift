@@ -13,10 +13,23 @@ struct Tutorial: View {
     var body: some View {
              
         ZStack {
-
             VStack {
-                Image (systemName: "xmark.circle")
-                    .multilineTextAlignment(.trailing)
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        showTutorial.toggle()
+                    }, label: {
+                        Image (systemName: "xmark.circle")
+                            .foregroundColor(Color("violet"))
+                            .font(.largeTitle)
+                            .multilineTextAlignment(.trailing)
+                    }).padding(.trailing, 20)
+                }
+                Spacer()
+            }
+            VStack {
+                
+               
                 Text("Bienvenue dans la Galaxie des connaissances")
                     .font(.custom("Revalia", size: 25))
                     .multilineTextAlignment(.center)

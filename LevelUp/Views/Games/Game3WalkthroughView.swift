@@ -14,25 +14,25 @@ struct Game3WalkthroughView: View {
     @Binding var isWalkthroughViewShowing: Bool
     @State var isValidatelose = false
     @State var isValidatewin = false
-    
+    @State var score = 0
     var body: some View {
         
         ZStack{
             GameBackground(gameTitle: "La Science dans la survie")
             VStack{
-                Game3TabView(startGame:$startGame,popUpIsActive:$popUpIsActive,selection: $selection,isValidatelose: $isValidatelose, isValidatewin: $isValidatewin)
+                Game3TabView(startGame:$startGame,popUpIsActive:$popUpIsActive,selection: $selection,isValidatelose: $isValidatelose, isValidatewin: $isValidatewin, score: $score)
                     .padding(.top, 100)
             }
             if isValidatewin {
-                PopUpEndOfGame(player: PLAYER1, game: GAME2, win: true, popUpIsActive: $popUpIsActive, startGame: $startGame, isValidate: $isValidatewin)
+                PopUpEndOfGame(player: PLAYER1, game: GAME2, win: true, score: $score, popUpIsActive: $popUpIsActive, startGame: $startGame, isValidate: $isValidatewin)
                 
             } else if isValidatelose {
-                PopUpEndOfGame(player: PLAYER1, game: GAME2, win: false, popUpIsActive: $popUpIsActive, startGame: $startGame, isValidate: $isValidatelose)
+                PopUpEndOfGame(player: PLAYER1, game: GAME2, win: false, score: $score, popUpIsActive: $popUpIsActive, startGame: $startGame, isValidate: $isValidatelose)
             }
         }
         .transition(.move(edge: .bottom))
         .onAppear{
-            playSound(sound: "Flowing Rocks", type: "mp3")
+            audioPlayer?.numberOfLoops = -1
         }
     }
 }

@@ -85,8 +85,10 @@ struct Game1: View {
             }
             .padding()
             .background(Color(.white).opacity(0.8))
-            .cornerRadius(40)
+            .cornerRadius(40) 
             .frame(width: 350, height: 500, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        }.onAppear{
+            audioPlayer?.numberOfLoops = -1
         }
     }
 }

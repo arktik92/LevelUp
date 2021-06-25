@@ -11,7 +11,7 @@ struct Onboarding: View {
     @State var isActive:Bool = false
     @State private var animationSoucoup = false
     
-    let guideLine : String = "Embarque dans l'univers et découvre des choses pratiques avec des connaissances que tu sais déjà !"
+    let guideLine : String = "Embarque dans l'univers et découvre des choses pratiques avec des connaissances que tu possèdes déjà !"
     
     
     var body: some View {
@@ -19,7 +19,7 @@ struct Onboarding: View {
                   
                   if self.isActive {
                      
-                      Connexion()
+                    Connexion()
                   } else {
                      
                     ZStack{
@@ -66,14 +66,19 @@ struct Onboarding: View {
               }
               // 5.
               .onAppear {
+               
                   // 6.
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                       // 7.
                       withAnimation {
                           self.isActive = true
+                       
                       }
                   }
-              }
+                perform: do {
+                                    playSound(sound: "SonSplash2", type: "mp3")
+                                }
+              }.statusBar(hidden: true)
         
         
         

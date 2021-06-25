@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct SwiftUIView: View {
+    var posenetManager: PoseNetManager = PoseNetManager()
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            .onAppear {
+                posenetManager.observeImage(imageName: "homme")
+            }
     }
 }
 

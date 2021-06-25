@@ -4,14 +4,15 @@
 //
 //  Created by Laura LONG on 11/06/2021.
 //
-
+import AVFoundation
 import SwiftUI
 
 struct Game2: View {
     @Binding var StartGame: Bool
-    
+    @State private var sonValidate: AVAudioPlayer?
     var myGameDrag : Game
-    @Binding var isValidate : Bool
+    @Binding var isValidateWin : Bool
+    @Binding var isValidateLose : Bool
     @Binding var popUpIsActive: Bool
     @State private var rotationPlanet = false
     @StateObject var gridData = GridViewModel()
@@ -20,7 +21,8 @@ struct Game2: View {
     let rows = Array(repeating: GridItem(.flexible(), spacing: 10), count: 1)
     
     var body: some View {
-        
+        let pathValidate = Bundle.main.path(forResource: "SonValidation.mp3", ofType:nil)!
+        let urlValidate = URL(fileURLWithPath: pathValidate)
         ZStack {
             VStack {
                 ZStack {
@@ -66,11 +68,20 @@ struct Game2: View {
                 
                 Spacer().frame(height:40)
                 Button(action: {
-                    isValidate.toggle()
+                    
                    // popUpIsActive.toggle()
-                    playSound(sound: "SonValidation", type: "mp3")
+                    
+                    do {
+                        sonValidate = try AVAudioPlayer(contentsOf: urlValidate)
+                        sonValidate?.play()
+                    } catch {
+                        // couldn't load file :(
+                    }
+                    
                     if gameSolution == gridData.gridItems.map({$0.gridID}){
-                      
+                        isValidateWin.toggle()
+                    }else{
+                        isValidateLose.toggle()
                     }
                     
                     
@@ -96,7 +107,7 @@ struct Game2_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             GameBackground(gamePlanet: PLANET1, gameTitle: "La science dans le quotidien")
-            Game2(StartGame: .constant(true), myGameDrag: GAME1, isValidate: .constant(true), popUpIsActive: .constant(true))
+            Game2(StartGame: .constant(true), myGameDrag: GAME1, isValidateWin: .constant(false), isValidateLose: .constant(false), popUpIsActive: .constant(true))
         }
     }
 }
@@ -109,8 +120,8 @@ struct Grid: Identifiable {
 class GridViewModel: ObservableObject {
     @Published var gridItems =
         [Grid(gridID: 1, gridText: "Jus d'Orange"),
-         Grid(gridID: 2, gridText: "Sirop de canne"),
-         Grid(gridID: 3, gridText: "Curaçao"),]
+         Grid(gridID: 2, gridText: "Curaçao"),
+         Grid(gridID: 3, gridText: "Sirop de canne"),]
     
     @Published var currentGrid: Grid?
 }

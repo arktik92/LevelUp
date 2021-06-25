@@ -4,7 +4,7 @@
 //
 //  Created by Mac n°26 on 14/06/2021.
 //
-
+import AVFoundation
 import SwiftUI
 
 struct QuestionView: View {
@@ -12,17 +12,24 @@ struct QuestionView: View {
     var question : Question{
         return quiz[counter]
     }
+    @State private var click : AVAudioPlayer?
+    @State private var sonValidate : AVAudioPlayer?
     @EnvironmentObject var points : Player
     @State var quiz : [Question]
     @Binding var juste : Double
     @State var completed : Bool = false
     let value = ["A","B","C","D","E","F"]
     var body: some View {
+        let pathClick = Bundle.main.path(forResource: "switch1.mp3", ofType:nil)!
+        let urlClick = URL(fileURLWithPath: pathClick)
+        let pathValidate = Bundle.main.path(forResource: "SonValidation.mp3", ofType:nil)!
+        let urlValidate = URL(fileURLWithPath: pathValidate)
         GeometryReader { geo in
             VStack(alignment:.leading){
                 
                 ForEach(0 ..< question.reponses.count) { reponse in
                     HStack(spacing:30){
+                        
                         Text(value[reponse])
                             .foregroundColor(.white)
                             .padding()
@@ -30,10 +37,16 @@ struct QuestionView: View {
                             .background(LinearGradient(gradient: Gradient(colors: [Color("rouge"),Color("violet")]), startPoint: .top, endPoint: .bottom))
                             .cornerRadius(50)
                             .font(.custom("SFUIDisplay-Heavy", size: 20))
+                            .multilineTextAlignment(.center)
                         
                         Button(){
                             quiz[counter].selectedInt = reponse
-                            
+                            do {
+                                click = try AVAudioPlayer(contentsOf: urlClick)
+                                click?.play()
+                            } catch {
+                                // couldn't load file :(
+                            }
                         }label:{
                             Text(question.reponses[reponse])
                                 .font(.custom("SFUIDisplay-Light", size: 20))
@@ -44,8 +57,11 @@ struct QuestionView: View {
                                 .fixedSize(horizontal: false, vertical: true)
                             
                         }
+                        Spacer()
                         
                     }.frame(maxWidth:.infinity,alignment:.center)
+                    .padding(.leading)
+                    
                 }
                 Spacer().frame(height:20)
                 if counter<quiz.count-1{
@@ -55,7 +71,12 @@ struct QuestionView: View {
                             juste+=1
                         }
                         counter+=1
-                        playSound(sound: "SonValidation", type: "mp3")
+                        do {
+                            sonValidate = try AVAudioPlayer(contentsOf: urlValidate)
+                            sonValidate?.play()
+                        } catch {
+                            // couldn't load file :(
+                        }
                     }label:{
                         Text("Suite")
                             .foregroundColor(.white)

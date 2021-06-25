@@ -4,20 +4,21 @@
 //
 //  Created by Lisa Mardjoeki on 15/06/2021.
 //
-
+import AVFoundation
 import SwiftUI
 
 struct Game1e2: View {
     
     @State private var showImagePicker: Bool = false
     @State private var image: Image? = nil
-    
+    @State private var sonValidate: AVAudioPlayer?
     let rightArrow = Image(systemName: "arrow.right")
     let camera = Image(systemName: "camera.fill")
     let addFriend = Image(systemName: "person.fill.badge.plus")
     
     var body: some View {
-        
+        let pathValidate = Bundle.main.path(forResource: "SonValidation.mp3", ofType:nil)!
+        let urlValidate = URL(fileURLWithPath: pathValidate)
         VStack{
             // A TOI DE JOUER : PLS --------------------------------
             ScrollView {
@@ -54,7 +55,14 @@ struct Game1e2: View {
                 // ENVOI DE LA PHOTO --------------------------------
                 Button(action: {
                     self.showImagePicker = true
-                    playSound(sound: "SonValidation", type: "mp3")
+                    
+                    do {
+                        sonValidate = try AVAudioPlayer(contentsOf: urlValidate)
+                        sonValidate?.play()
+                    } catch {
+                        // couldn't load file :(
+                    }
+                    
                 }, label: {
                     HStack {
                         Text("Envoyer la photo")

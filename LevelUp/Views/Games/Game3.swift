@@ -31,14 +31,9 @@ struct Game3: View {
                         .foregroundColor(Color("bleuNuit"))
                         .font(.custom("SFUIDisplay-Light", size: 18))
                 }
-                Text("Apporte-moi ton aide")
-                    .foregroundColor(.white)
-                    .font(.custom("SFUIDisplay-Light", size: 20))
-                    
-                    .padding(.horizontal,20)
-                    .padding(.vertical,15)
-                    .background(Color("violet"))
-                    .cornerRadius(25)
+                Text("Glisse vers la droite ->")
+                    .font(.custom("SFUIDisplay-Heavy", size: 20))
+                    .foregroundColor(Color("violet"))
                     
                 
             }.foregroundColor(.white)
