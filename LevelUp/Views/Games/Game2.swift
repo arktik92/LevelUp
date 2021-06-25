@@ -11,10 +11,12 @@ struct Game2: View {
     @Binding var StartGame: Bool
     
     var myGameDrag : Game
-    @State var isValidate: Bool = false
+    @Binding var isValidate : Bool
     @Binding var popUpIsActive: Bool
     @State private var rotationPlanet = false
     @StateObject var gridData = GridViewModel()
+    var gameSolution = [3,1,2]
+    
     let rows = Array(repeating: GridItem(.flexible(), spacing: 10), count: 1)
     
     var body: some View {
@@ -39,7 +41,8 @@ struct Game2: View {
                             .font(.custom("SFUIDisplay-Light", size: 18))
                             .foregroundColor(Color("bleuNuit"))
                             .multilineTextAlignment(.center)
-                            .padding()
+                            .padding(.leading, 40)
+                            .padding(.trailing, 40)
                     }
                 }
                 
@@ -60,44 +63,54 @@ struct Game2: View {
                         }
                     }).frame(width: 90, height: 90, alignment: .center)
                 }
+                
+                Spacer().frame(height:40)
                 Button(action: {
                     isValidate.toggle()
+                   // popUpIsActive.toggle()
+                    playSound(sound: "SonValidation", type: "mp3")
+                    if gameSolution == gridData.gridItems.map({$0.gridID}){
+                      
+                    }
+                    
+                    
                 }, label: {
                     Rectangle()
-                        .foregroundColor(.white)
+                        .foregroundColor(Color("violet"))
                         .clipShape(Capsule())
                         .frame(width: 200, height: 50, alignment: .center)
                         .overlay(
                         Text("Valider")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                         )
                 })
             }
-            if isValidate {
-                PopUpEndOfGame(player: PLAYER1, game: GAME2, win: true, popUpIsActive: $popUpIsActive, startGame: $StartGame, isValidate: $isValidate)
-            }
-        }
+       
+        }.navigationBarHidden(true)
+        
+        
     }
 }
 
 struct Game2_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            GameBackground(gamePlanet: PLANET2, gameTitle: "La masse volumique pour... Créer des Cocktails pour tes potes")
-            Game2(StartGame: .constant(true), myGameDrag: GAME1, isValidate: true, popUpIsActive: .constant(true))
+            GameBackground(gamePlanet: PLANET1, gameTitle: "La science dans le quotidien")
+            Game2(StartGame: .constant(true), myGameDrag: GAME1, isValidate: .constant(true), popUpIsActive: .constant(true))
         }
     }
 }
 
 struct Grid: Identifiable {
+    var gridID : Int
     var id = UUID().uuidString
     var gridText: String
 }
 class GridViewModel: ObservableObject {
     @Published var gridItems =
-        [Grid(gridText: "Réponse 1"),
-         Grid(gridText: "Réponse 2"),
-         Grid(gridText: "Réponse 3"),]
+        [Grid(gridID: 1, gridText: "Jus d'Orange"),
+         Grid(gridID: 2, gridText: "Sirop de canne"),
+         Grid(gridID: 3, gridText: "Curaçao"),]
     
     @Published var currentGrid: Grid?
 }
@@ -130,6 +143,7 @@ struct DropViewDelegate: DropDelegate {
                 gridData.gridItems[toIndex] = fromGrid
             }
         }
+        
     }
     
     // setting Action as Move...

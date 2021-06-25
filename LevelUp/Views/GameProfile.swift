@@ -16,80 +16,117 @@ struct GameProfile: View {
     var body: some View {
         ZStack {
             BackgroundViews()
-        GeometryReader { geo in
+                .blur(radius: 3.0)
             
-                BackgroundRectangle(color: "vert")
-                    .edgesIgnoringSafeArea(.all)
-                VStack {
-                    //IMAGE
+            ZStack{
+                RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.white)
+                    .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                    .frame(height: 650, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .padding()
+                
+                VStack{
+                    
                     Image(game.gameImg)
-                        .resizable()
-                        .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                        .frame(maxWidth:geo.size.width*0.9,maxHeight:geo.size.height*0.2,alignment:.top)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                    ScrollView{
-                        Spacer()
-                        //INFOS JEU
-                        VStack{
-                            Text(game.gameName)
-                                .font(Font.custom("SFUIDisplay-Heavy", size: 20))
-                                .foregroundColor(Color("violet"))
-                                .multilineTextAlignment(.center)
-                            Spacer().frame(height:10)
-                            Text(game.gameShortDescription)
-                                .foregroundColor(.white)
-                                .font(Font.custom("SFUIDisplay-Regular", size: 18))
-                                .multilineTextAlignment(.center)
-                                .fixedSize(horizontal: false, vertical: true)
-                            
-                            Spacer().frame(height:10)
-                            //INFOS POINTS
-                            VStack {
-                                Spacer()
-                                Text("Points à remporter :").foregroundColor(.white)
-                                    .font(Font.custom("SFUIDisplay-Regular", size: 18))
-                                Spacer()
-                                LazyVGrid(columns: columns,spacing:10){
-                                    Text("Pro : \(game.nbPtsPro)")
-                                    
-                                    Text("Hygiène : \(game.nbPtsHyg)")
-                                        .fixedSize(horizontal: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/, vertical: false)
-                                    Text("Quo : \(game.nbPtsQuo)")
-                                    
-                                    Text("Sur : \(game.nbPtsSur)")
-                                    
-                                    Text("DevPer : \(game.nbPtsDevPer)")
-                                        .fixedSize(horizontal: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/, vertical: false)
-                                    Text("Pra : \(game.nbPtsPra)")
-                                    
-                                }.foregroundColor(.white)
-                                
-                                .font(Font.custom("SFUIDisplay-Regular", size: 18))
-                                .frame(maxWidth:.infinity)
-                                
-                            }
-                        }.frame(maxWidth:.infinity)
-                        //ETOILES
-                        VStack {
-                            Spacer().frame(height:20)
-                            HStack {
-                                ForEach(1...game.nbEtoile, id:\.self){_ in
-                                    Image("ptsEtoile")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                    
-                                    
-                                }
-                            }
-                            .frame(maxWidth:geo.size.width*0.5)
-                            
+                    .resizable()
+                        .aspectRatio(contentMode: .fill)
+                    .frame(width: 200, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    
+                    Text(game.gameName)
+                        .font(Font.custom("Revalia", size: 20))
+                        .gradientForeground(colors: [Color("rouge"), Color("violet")])
+                        .multilineTextAlignment(.center)
+                        .padding()
+        
+                    Text(game.gameShortDescription)
+                        .foregroundColor(Color("bleuNuit"))
+                        .font(Font.custom("SFUIDisplay-Regular", size: 16))
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        
+               
+                    Text("Tes points de compétences:").foregroundColor(Color("bleuNuit"))
+                        .font(Font.custom("SFUIDisplay-Heavy", size: 20))
+                        .multilineTextAlignment(.center)
+                        .padding()
+                    VStack {
+                        if game.nbPtsPro > 0{                            Text("Professionnel : + \(game.nbPtsPro)")
+                            .foregroundColor(Color("rouge"))
+                            .font(.custom("Revalia", size: 15))
+                        }else{
+                            EmptyView()
                         }
-                    }.padding(.horizontal,15)
-                   
+                            
+                        if game.nbPtsHyg > 0{                            Text("Hygiène : + \(game.nbPtsHyg)")
+                            .foregroundColor(Color("rouge"))
+                            .font(.custom("Revalia", size: 15))
+                        }else{
+                            EmptyView()
+                        }
+                        if game.nbPtsQuo > 0{                                Text("Quotidien : + \(game.nbPtsQuo)")
+                            .foregroundColor(Color("rouge"))
+                            .font(.custom("Revalia", size: 15))
+                        }else{
+                            EmptyView()
+                        }
+                        if game.nbPtsSur > 0{                             Text("Survie : +\(game.nbPtsSur)")
+                            .foregroundColor(Color("rouge"))
+                            .font(.custom("Revalia", size: 15))
+                        }else{
+                            EmptyView()
+                        }
+                        if game.nbPtsDevPer > 0{                           Text("Développement Personnel : + \(game.nbPtsDevPer)")
+                            .foregroundColor(Color("rouge"))
+                            .font(.custom("Revalia", size: 15))
+                        }else{
+                            EmptyView()
+                        }
+                        if game.nbPtsPra > 0{                            Text("Pratique : + \(game.nbPtsPra)")
+                            .foregroundColor(Color("rouge"))
+                            .font(.custom("Revalia", size: 15))
+                        }else{
+                            EmptyView()
+                        }
+                            
+                        
+                    }
+             
+                    VStack {
+                        Text("Tes étoiles à remporter")
+                            .foregroundColor(Color("violet"))
+                                .font(Font.custom("SFUIDisplay-Heavy", size: 25))
+                            .padding()
+                        
+                        HStack {
+                            ForEach(1...game.nbEtoile, id:\.self){_ in
+                                Image("ptsEtoile")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            }
+                        }
+                        .frame(width: 200,  alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        
+                    }
+                 
+                    
+                }.frame(height:650, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .padding()
+                
+                
+                
+            }
+
+                VStack {
+                    Spacer()
+                        Spacer()
+                            Spacer().frame(height:10)
+      
                     if game.gameImg == "cocktail" {
                        
                         Button(action: {
                             startGame.toggle()
+                            playSound(sound: "SonValidation", type: "mp3")
                         }, label: {
                             VStack {
                                 Text("Commencer à jouer").foregroundColor(.white)
@@ -98,7 +135,7 @@ struct GameProfile: View {
                                     .padding(.horizontal,30)
                                     .background(Color("violet"))
                                     .cornerRadius(20)
-                                    .font(Font.custom("SFUIDisplay-Regular", size:21))
+                                    .font(Font.custom("SFUIDisplay-Light", size:21))
                             }.frame(maxWidth: .infinity, alignment: .center)
                         })
                             
@@ -107,27 +144,10 @@ struct GameProfile: View {
                     
                 }.padding(.horizontal,10)
                 .padding(.vertical,30)
-                VStack {
-                    HStack {
-                        Spacer()
-//                        Button(){
-//                            withAnimation(.easeInOut){
-//                                popUpIsActive.toggle()
-//                            }
-//                        }label:{
-//                                Image(systemName: "xmark.circle.fill")
-//                                    .foregroundColor(.white)
-//                                    .font(.system(size: 35))
-//                        }
-                    }
-                    Spacer()
-                }.padding(.horizontal,10)
-                .padding(.vertical,10)
-            }
-        }.navigationBarHidden(true)
-    }
+        }
+     
+        }
 }
-
 
 
 struct GameProfile_Previews: PreviewProvider {

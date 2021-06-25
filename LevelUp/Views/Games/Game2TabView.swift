@@ -11,18 +11,21 @@ struct Game2TabView: View {
     @Binding var startGame: Bool
     @Binding var popUpIsActive: Bool
     @Binding var selection: Int
-    
+    @Binding var isValidate : Bool
     var body: some View {
-        TabView(selection: $selection) {
-            ForEach(game2Views.indices, id: \.self) { index in
-                if game2Views[index] is Game2 {
-                    Game2(StartGame: $startGame, myGameDrag: GAME1, popUpIsActive: $popUpIsActive)
-                } else {
-                    Game2(StartGame: $startGame, myGameDrag: GAME1, popUpIsActive: $popUpIsActive)
+      
+            TabView(selection: $selection) {
+                ForEach(game2Views.indices, id: \.self) { index in
+                    if game2Views[index] is Game2 {
+                        Game2(StartGame: $startGame, myGameDrag: GAME1, isValidate: $isValidate, popUpIsActive: $popUpIsActive)
+                    } else {
+                        Game2(StartGame: $startGame, myGameDrag: GAME1, isValidate: $isValidate, popUpIsActive: $popUpIsActive)
+                    }
                 }
             }
-        }
-        .tabViewStyle(PageTabViewStyle())
+            .tabViewStyle(PageTabViewStyle())
+           
+        
     }
 }
 

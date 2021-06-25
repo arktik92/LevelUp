@@ -18,33 +18,62 @@ struct Game1: View {
                     // Introduction sur la PLS -------
                     Text("Position : P.L.S\r🆘")
                         .font(Font.custom("Revalia", size: 25).bold())
+                         .gradientForeground(colors: [Color("rouge"), Color("violet")])
                         .multilineTextAlignment(.center)
                     HStack{
-                        Text("P.L.S?")
-                            .font(Font.title2.bold())
+                        Text("P.L.S.?")
                             .foregroundColor(.red)
+                            .font(.custom("SFUIDisplay-Heavy", size: 18))
+                           
                         Text("Position Latérale de Sécurité")
+                            .font(.custom("SFUIDisplay-Heavy", size: 18))
+                            .foregroundColor(Color("bleuNuit"))
                     }
                     Text("Lorsqu'un accident survient, on te parle souvent de la position \"PLS\".").italic()
-                    Text("A quoi sert-elle? Et en quoi consiste t'elle vraiment?").bold().padding()
+                        .foregroundColor(Color("bleuNuit"))
+                    Text("A quoi sert-elle? Et en quoi consiste t'elle vraiment?")
+                        .font(.custom("SFUIDisplay-Heavy", size: 16))
+                        .foregroundColor(Color("bleuNuit"))
+                        .padding()
                     
                     //Utilité de la PLS avec texte et image -------
                     subtitleView(subtitle: "Utilité de la PLS")
-                    Text("Lorsqu’une personne est au sol, inconsciente et qu’elle respire, il ne faut pas la laisser sur le dos afin d’éviter que ses voies respiratoires ne soient obstruées par des vomissements ou par sa langue. Il s’agit avant tout de limiter les risques d’étouffement avant l’arrivée des secours, qu’il faut alerter en premier lieu.").multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/).padding()
+                    Text("Lorsqu’une personne est au sol, inconsciente et qu’elle respire, il ne faut pas la laisser sur le dos afin d’éviter que ses voies respiratoires ne soient obstruées par des vomissements ou par sa langue. Il s’agit avant tout de limiter les risques d’étouffement avant l’arrivée des secours, qu’il faut alerter en premier lieu.")
+                        .font(.custom("SFUIDisplay-Light", size: 18))
+                        .foregroundColor(Color("bleuNuit"))
+                        .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/).padding()
                     
                     
                     //Procédure pour la PLS --------
                     subtitleView(subtitle: "Procédure")
                     VStack(alignment: .leading){
                         checkPLS(numberImage: "1.circle", checkText: "Vérifier l'état de conscience de la victime")
+                            .font(.custom("SFUIDisplay-Light", size: 18))
+                            .foregroundColor(Color("bleuNuit"))
                         checkPLS(numberImage: "2.circle", checkText: "Vérifier que la victime respire")
+                            .font(.custom("SFUIDisplay-Light", size: 18))
+                            .foregroundColor(Color("bleuNuit"))
                         checkPLS(numberImage: "3.circle", checkText: "Libérer les voies aériennes")
+                            .font(.custom("SFUIDisplay-Light", size: 18))
+                            .foregroundColor(Color("bleuNuit"))
                         checkPLS(numberImage: "4.circle", checkText: "Aligner les jambes dans l’axe du corps")
+                            .font(.custom("SFUIDisplay-Light", size: 18))
+                            .foregroundColor(Color("bleuNuit"))
                         checkPLS(numberImage: "5.circle", checkText: "Lever le bras de la victime à 90° par rapport au corps")
+                            .font(.custom("SFUIDisplay-Light", size: 18))
+                            .foregroundColor(Color("bleuNuit"))
                         checkPLS(numberImage: "6.circle", checkText: "Fléchir le bras et la jambe opposés")
+                            .font(.custom("SFUIDisplay-Light", size: 18))
+                            .foregroundColor(Color("bleuNuit"))
                         checkPLS(numberImage: "7.circle", checkText: "Basculer la victime sur le côté")
+                            .font(.custom("SFUIDisplay-Light", size: 18))
+                            .foregroundColor(Color("bleuNuit"))
                         checkPLS(numberImage: "8.circle", checkText: "Maintenir la bouche ouverte")
+                            .font(.custom("SFUIDisplay-Light", size: 18))
+                            .foregroundColor(Color("bleuNuit"))
                         checkPLS(numberImage: "9.circle", checkText: "Surveiller la respiration et l'état de conscience de la victime en attendant l’arrivée des secours")
+                            .font(.custom("SFUIDisplay-Light", size: 18))
+                            .foregroundColor(Color("bleuNuit"))
                         Image("positionPLS")
                     }.padding(.top)
                     
@@ -55,7 +84,7 @@ struct Game1: View {
                 }
             }
             .padding()
-            .background(Color(.white))
+            .background(Color(.white).opacity(0.8))
             .cornerRadius(40)
             .frame(width: 350, height: 500, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         }

@@ -17,25 +17,29 @@ struct GameBackground: View {
             BackgroundViews()
             
             VStack{
-                HStack {
-                    Text(gameTitle)
-                        .gradientForeground(colors: [Color("rouge"), Color("violet")])
-                        .font(Font.custom("Revalia", size: 25))
-                        .multilineTextAlignment(.center)
-                        .lineLimit(nil)
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Image(systemName:"person.fill.badge.plus")
-                            .foregroundColor(Color("rouge"))
-                            .font(.largeTitle)
-                    })
-                    
-                }
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Image(systemName:"person.fill.badge.plus")
+                        .foregroundColor(Color("rouge"))
+                        .font(.largeTitle)
+                        .frame(minWidth:350, alignment: .trailing)
+                })
+                
                 Image("\(gamePlanet.planetImg)")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 100)
+                    .frame(height: 80)
                     .rotationEffect(.degrees(rotationPlanet ? 360 : 0))
-                    .animation(.linear(duration: 15.0))
+                    .animation(.linear(duration: 30.0))
+                
+                HStack {
+                    Text(gameTitle)
+                        .gradientForeground(colors: [Color("rouge"), Color("violet")])
+                        .font(Font.custom("Revalia", size: 22))
+                        .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+               
+                }
+             
                 
                 Spacer()
             }

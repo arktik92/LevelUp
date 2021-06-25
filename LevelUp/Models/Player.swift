@@ -20,7 +20,7 @@ class Player : ObservableObject, Identifiable {
     var totalPtsPra : Double = 0.0
     var achievments : [Achiev] = []
     var achievedGame:[Game] = []
-    var unlockedPlanet : [Planet] = []
+    var unlockedPlanet : [Planet] = MY_PLANETS
 }
 
 extension Player {

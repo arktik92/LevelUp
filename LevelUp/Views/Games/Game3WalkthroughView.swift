@@ -8,23 +8,38 @@
 import SwiftUI
 
 struct Game3WalkthroughView: View {
+    @Binding var startGame: Bool
+    @Binding var popUpIsActive: Bool
     @State private var selection = 0
     @Binding var isWalkthroughViewShowing: Bool
+    @State var isValidatelose = false
+    @State var isValidatewin = false
     
     var body: some View {
+        
         ZStack{
             GameBackground(gameTitle: "La Science dans la survie")
             VStack{
-                Game3TabView(selection: $selection)
+                Game3TabView(startGame:$startGame,popUpIsActive:$popUpIsActive,selection: $selection,isValidatelose: $isValidatelose, isValidatewin: $isValidatewin)
                     .padding(.top, 100)
+            }
+            if isValidatewin {
+                PopUpEndOfGame(player: PLAYER1, game: GAME2, win: true, popUpIsActive: $popUpIsActive, startGame: $startGame, isValidate: $isValidatewin)
+                
+            } else if isValidatelose {
+                PopUpEndOfGame(player: PLAYER1, game: GAME2, win: false, popUpIsActive: $popUpIsActive, startGame: $startGame, isValidate: $isValidatelose)
             }
         }
         .transition(.move(edge: .bottom))
+        .onAppear{
+            playSound(sound: "Flowing Rocks", type: "mp3")
+        }
     }
 }
 
+
 struct Game3WalkthroughView_Previews: PreviewProvider {
     static var previews: some View {
-        Game3WalkthroughView(isWalkthroughViewShowing: Binding.constant(true))
+        Game3WalkthroughView(startGame: .constant(true), popUpIsActive: .constant(true),isWalkthroughViewShowing: Binding.constant(true))
     }
 }

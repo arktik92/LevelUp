@@ -27,8 +27,8 @@ struct SignInApple: View {
             case .failure(let error):
                 print(error.localizedDescription)
             }
-        }.signInWithAppleButtonStyle(.white)
-        .frame(width: 300, height: 50, alignment: .center)
+        }.signInWithAppleButtonStyle(.black)
+        .frame(width: 350, height: 50, alignment: .center)
         .clipShape(Capsule())
     }
 }

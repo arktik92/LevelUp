@@ -23,11 +23,16 @@ struct Game1e2: View {
             ScrollView {
                 Text("A toi de jouer ! ")
                     .font(Font.custom("Revalia", size: 25).bold())
+                    .gradientForeground(colors: [Color("rouge"), Color("violet")])
                     .multilineTextAlignment(.center)
                     .padding()
                 
                 // Consignes -------
-                Text("Il te faut reproduire la Position Latérale de Sécurité. Tu as 2 façons de procéder:\r\(rightArrow)Tu joues le rôle de la victime en PLS et demande à un de tes proches de te photographier\(camera)\r\(rightArrow)Inversement, un de tes proches joue le rôle de la victime en PLS et tu le photographie \(camera)").multilineTextAlignment(.leading)
+                Text("Il te faut reproduire la Position Latérale de Sécurité. Tu as 2 façons de procéder:\r\(rightArrow)Tu joues le rôle de la victime en PLS et demande à un de tes proches de te photographier\(camera)\r\(rightArrow)Inversement, un de tes proches joue le rôle de la victime en PLS et tu le photographie \(camera)")
+                    .font(.custom("SFUIDisplay-Light", size: 18))
+                    .foregroundColor(Color("bleuNuit"))
+                    .multilineTextAlignment(.leading)
+                    
                 
                 Spacer()
                 
@@ -35,17 +40,21 @@ struct Game1e2: View {
                 VStack (alignment: .center){
                     subtitleView(subtitle: "Petite astuce")
                     Text("Tu peux utiliser l'icône \(addFriend) en haut à droite de ton écran pour lancer l'invitation auprès d'un ami! ")
+                        .font(.custom("SFUIDisplay-Light", size: 18))
+                        .foregroundColor(Color("bleuNuit"))
                 }
                 .padding()
-                .background(Color(.systemGray4))
+                .background(Color("bleuNuit").opacity(0.2))
                 .cornerRadius(40)
                 .font(.subheadline)
+                .padding()
                 
                 Spacer()
                 
                 // ENVOI DE LA PHOTO --------------------------------
                 Button(action: {
                     self.showImagePicker = true
+                    playSound(sound: "SonValidation", type: "mp3")
                 }, label: {
                     HStack {
                         Text("Envoyer la photo")
@@ -53,7 +62,7 @@ struct Game1e2: View {
                         Image(systemName:"camera.fill")
                     }
                     .padding()
-                    .background(Color("rouge"))
+                    .background(Color("violet"))
                     .cornerRadius(25)
                     .foregroundColor(.white)
                     
@@ -67,7 +76,7 @@ struct Game1e2: View {
             }
             .padding()
             .frame(width: 350, height: 500, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .background(Color(.white))
+            .background(Color(.white).opacity(0.8))
             .cornerRadius(40)
             .sheet(isPresented: self.$showImagePicker){
                 PhotoCaptureView(showImagePicker: self.$showImagePicker, image: self.$image)

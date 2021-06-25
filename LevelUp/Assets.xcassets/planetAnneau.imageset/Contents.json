@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "planetAnneau.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "planetAnneau.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -20,26 +20,25 @@ struct SignInEmail: View {
                 self.showField.toggle()
             }, label: {
                 
+                ZStack {
                     Rectangle()
-                        .foregroundColor(.white)
-                        .clipShape(Capsule())
-                        .frame(width: 300, height: 50, alignment: .center)
-                        .padding()
-                        .overlay(
-                    HStack {
-                        Spacer()
-                        Image("arrobase")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40, alignment: .center)
-                        
-                        Text("Connexion avec ton email")
-                            .fontWeight(.semibold)
-                            .font(.custom("SFUIDisplay-Light", size: 18))
-                            .foregroundColor(Color("bleuNuit"))
-                            .padding(.horizontal, 30)
-                    }
+                            .foregroundColor(.white)
+                            .clipShape(Capsule())
+                            .frame(width: 350, height: 50, alignment: .center)
+                            .padding()
+                            .overlay(
+                        HStack {
+                            Image("arrobase")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30, alignment: .center)
+                            Text("Connexion avec ton email")
+                                .font(.custom("SFUIDisplay-Light", size: 18))
+                                .foregroundColor(Color("bleuNuit"))
+                                .padding(.horizontal, 10)
+                        }
                         )
+                }
                 
             })
             if showField == true {
@@ -65,7 +64,6 @@ struct SignInEmail: View {
                         .font(.custom("SFUIDisplay-Light", size: 18))
                         .background(Color(.white))
                         .cornerRadius(20)
-                        
                         .multilineTextAlignment(.center)
                 }.foregroundColor(.white)
                 .frame(width: 300, height: 50, alignment: .center)
@@ -82,24 +80,34 @@ struct SignInEmail: View {
                             }
                         }
                     }, label: {
-                        Rectangle()
-                            .clipShape(Capsule())
-                            .foregroundColor(.white)
-                            .frame(width: 100, height: 40, alignment: .center)
-                            .overlay(
-                                Text("Connexion")
+                        Spacer()
+                        ZStack {
+                            Rectangle()
+                                .clipShape(Capsule())
+                                .foregroundColor(Color("violet"))
+                                .frame(width: 150, height: 50, alignment: .center)
+                                .padding()
+                                .overlay(
+                            Text("Se connecter")
+                                .foregroundColor(.white)
                             )
+                        }
                     }) .fullScreenCover(isPresented: $showMain, content: {
                         Universe(myPlayer: PLAYER1, planetList: MY_PLANETS)
                     })
                 } else {
-                    Rectangle()
-                        .clipShape(Capsule())
-                        .foregroundColor(.gray)
-                        .frame(width: 100, height: 40, alignment: .center)
-                        .overlay(
-                            Text("Connexion")
+                    ZStack {
+                        Rectangle()
+                            .clipShape(Capsule())
+                            .foregroundColor(Color("violet"))
+                            .frame(width: 150, height: 50, alignment: .center)
+                            .padding()
+                            .overlay(
+                        Text("Se connecter")
+                                    .foregroundColor(.white)
+                                
                         )
+                    }
                 }
             }
         }

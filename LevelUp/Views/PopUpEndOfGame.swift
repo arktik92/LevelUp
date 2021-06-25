@@ -32,7 +32,7 @@ struct PopUpEndOfGame: View {
                     Image("trophy")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth:.infinity)
+                        .frame(width: 170, height: 170, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .padding(.horizontal,50)
                     Spacer()
                     
@@ -56,7 +56,16 @@ struct PopUpEndOfGame: View {
                         startGame = false
                       isValidate = false
                         popUpIsActive = false
+                      
+                            playSound(sound: "SonBouton2", type: "mp3")
+                       
                         points.totalEtoile += game.nbEtoile
+                        points.totalPtsPro += Double(game.nbPtsPro)
+                        points.totalPtsPra += Double(game.nbPtsPra)
+                        points.totalPtsDevPer += Double(game.nbPtsDevPer)
+                        points.totalPtsQuo += Double(game.nbPtsQuo)
+                        points.totalPtsHyg += Double(game.nbPtsHyg)
+                        points.totalPtsSur += Double(game.nbPtsSur)
 
                     }label:{
                         Text("Génial")
@@ -68,7 +77,8 @@ struct PopUpEndOfGame: View {
                             .cornerRadius(35)
                     }.shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 8, x: 4, y: 4)
                     Spacer()
-                }.padding(15)
+                }.frame(width: 350, height: 450, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .padding(15)
                 
             }
         }else{
@@ -82,12 +92,13 @@ struct PopUpEndOfGame: View {
                         .font(Font.custom("Revalia", size: 28))
                         .foregroundColor(.white)
                         .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 8, x: 4, y: 4)
+                        
                     Spacer()
                     
                     Image("trophy")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth:.infinity)
+                        .frame(width: 170, height: 170, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .padding(.horizontal,50)
                         .rotationEffect(Angle(degrees: 200))
                     
@@ -115,7 +126,8 @@ struct PopUpEndOfGame: View {
                             .cornerRadius(35)
                     }.shadow(color: .black, radius: 8, x: 4, y: 4)
                     Spacer()
-                }.padding(15)
+                }.frame(width: 350, height: 450, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .padding(15)
                 
             }
         }
@@ -124,6 +136,6 @@ struct PopUpEndOfGame: View {
 
 struct PopUpEndOfGame_Previews: PreviewProvider {
     static var previews: some View {
-        PopUpEndOfGame(player: PLAYER1, game: GAME2, win: true, popUpIsActive: .constant(true), startGame: .constant(true), isValidate: .constant(true))
+        PopUpEndOfGame(player: PLAYER1, game: GAME1, win: true, popUpIsActive: .constant(true), startGame: .constant(true), isValidate: .constant(true))
     }
 }

@@ -12,13 +12,18 @@ struct Game2WalkthroughView: View {
     @Binding var popUpIsActive: Bool
     @State private var selection = 0
     @Binding var isWalkthroughViewShowing: Bool
-    
+    @State var isValidate = false
     var body: some View {
         ZStack{
             GameBackground(gameTitle: "La masse volumique pour créer des cocktails pour tes potes")
             VStack{
-                Game2TabView(startGame: $startGame, popUpIsActive: $popUpIsActive, selection: $selection)
+                Game2TabView(startGame: $startGame, popUpIsActive: $popUpIsActive, selection: $selection, isValidate: $isValidate)
                     .padding(.top, 170)
+            }
+            
+            if isValidate {
+                PopUpEndOfGame(player: PLAYER1, game: GAME2, win: true, popUpIsActive: $popUpIsActive, startGame: $startGame, isValidate: $isValidate)
+                    .ignoresSafeArea()
             }
         }
         .transition(.move(edge: .bottom))

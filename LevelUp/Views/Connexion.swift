@@ -25,12 +25,15 @@ struct Connexion: View {
                 ZStack {
                     BackgroundViews()
                     VStack {
+                      
                         Image("levelup")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
+                            .padding(.vertical, 90)
+                        
                         SignInEmail(showField: $showField, username: $username, password: $password, showMain: $showMain, user: $user)
                         SignInGameCenter(isGameCenterTaped: $isGamecenterTaped)
-                        Spacer()
+                        
                         SignInApple()
                         Spacer()
                     }
